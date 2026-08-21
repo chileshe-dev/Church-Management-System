@@ -2,12 +2,15 @@ package com.isaiah.Church.Management.System.controller;
 
 import com.isaiah.Church.Management.System.model.Member;
 import com.isaiah.Church.Management.System.service.MemberService;
+
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/members")
+@PreAuthorize("hasAnyRole('ADMIN','PASTOR')")
 public class MemberController {
 
     private final MemberService service;
@@ -34,13 +37,13 @@ public class MemberController {
         return service.getMemberById(id);
     }
 
+   
     // UPDATE
-    @PutMapping("/{id}")
-    public Member updateMember(
-            @PathVariable Integer id,
-            @RequestBody Member member) {
-
-        return service.updateMember(id, member);
+     @PutMapping("/{id}")
+      public Member updateMember( @PathVariable Integer id, 
+        @RequestBody Member member) {
+             return service.updateMember(id, member); 
+            
     }
 
     // DELETE

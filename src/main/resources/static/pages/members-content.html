@@ -1,0 +1,98 @@
+<h1>Members</h1>
+
+<div class="page-header">
+
+    <input
+        type="text"
+        id="searchMember"
+        placeholder="Search members...">
+
+    <button id="addMemberBtn">
+        + Add Member
+    </button>
+
+</div>
+
+<table id="membersTable">
+
+    <thead>
+
+        <tr>
+
+            <th>ID</th>
+
+            <th>First Name</th>
+
+            <th>Last Name</th>
+
+            <th>Email</th>
+
+            <th>Phone</th>
+
+            <th>Address</th>
+
+            <th>Actions</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody id="membersBody">
+
+    </tbody>
+
+</table>
+
+
+<!-- Add/Edit Member Modal -->
+
+<div id="memberModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2 id="modalTitle">
+            Add Member
+        </h2>
+
+        <input type="hidden" id="memberId">
+
+        <input
+                type="text"
+                id="firstName"
+                placeholder="First Name">
+
+        <input
+                type="text"
+                id="lastName"
+                placeholder="Last Name">
+
+        <input
+                type="email"
+                id="email"
+                placeholder="Email">
+
+        <input
+                type="text"
+                id="phone"
+                placeholder="Phone">
+
+        <input
+                type="text"
+                id="address"
+                placeholder="Address">
+
+        <div class="modal-buttons">
+
+            <button id="saveMemberBtn">
+                Save
+            </button>
+
+            <button id="cancelMemberBtn">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,78 @@
+<h1>Ministries</h1>
+
+<div class="toolbar">
+
+    <input
+        type="text"
+        id="searchMinistry"
+        placeholder="Search ministries...">
+
+    <button id="addMinistryBtn">
+        + Add Ministry
+    </button>
+
+</div>
+
+<table>
+
+    <thead>
+
+        <tr>
+
+            <th>ID</th>
+            <th>Ministry Name</th>
+            <th>Description</th>
+            <th>Leader</th>
+            <th>Actions</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody id="ministriesBody">
+
+    </tbody>
+
+</table>
+
+<div id="ministryModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2 id="ministryModalTitle">
+            Add Ministry
+        </h2>
+
+        <label>Ministry Name</label>
+
+        <input
+            type="text"
+            id="ministryName">
+
+        <label>Description</label>
+
+        <textarea
+            id="ministryDescription"
+            rows="4"></textarea>
+
+        <label>Leader</label>
+
+        <input
+            type="text"
+            id="leaderName">
+
+        <div class="modal-buttons">
+
+            <button id="saveMinistryBtn">
+                Save
+            </button>
+
+            <button id="cancelMinistryBtn">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

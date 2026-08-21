@@ -1,0 +1,208 @@
+<div class="reports-page">
+
+    <!-- Header -->
+
+    <div class="reports-header">
+
+        <div>
+            <h1>Reports</h1>
+
+            <p>
+                Overview of church contributions and attendance
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- Summary Cards -->
+
+    <div class="report-summary">
+
+
+        <!-- Total Contributions -->
+
+        <div class="report-summary-card">
+
+            <div class="report-card-icon">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+            </div>
+
+            <div>
+
+                <span>Total Contributions</span>
+
+                <h2 id="reportTotalContributions">
+                    K 0.00
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- Contribution Records -->
+
+        <div class="report-summary-card">
+
+            <div class="report-card-icon">
+                <i class="fa-solid fa-receipt"></i>
+            </div>
+
+            <div>
+
+                <span>Contribution Records</span>
+
+                <h2 id="reportContributionRecords">
+                    0
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- Attendance -->
+
+        <div class="report-summary-card">
+
+            <div class="report-card-icon">
+                <i class="fa-solid fa-user-check"></i>
+            </div>
+
+            <div>
+
+                <span>Attendance</span>
+
+                <h2 id="reportAttendancePercentage">
+                    0%
+                </h2>
+
+                <small>
+                    Present
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Monthly Contributions -->
+
+    <div class="report-panel large-panel">
+
+        <div class="report-panel-header">
+
+            <div>
+
+                <h2>
+                    Monthly Contributions
+                </h2>
+
+                <p>
+                    Total contributions received each month
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="chart-container">
+
+            <canvas id="reportsMonthlyChart"></canvas>
+
+        </div>
+
+    </div>
+
+
+    <!-- Lower Charts -->
+
+    <div class="reports-grid">
+
+
+        <!-- Contribution Types -->
+
+        <div class="report-panel">
+
+            <div class="report-panel-header">
+
+                <div>
+
+                    <h2>
+                        Contribution Types
+                    </h2>
+
+                    <p>
+                        Distribution of contribution records
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="chart-container small-chart">
+
+                <canvas
+                    id="reportsContributionTypeChart">
+                </canvas>
+
+            </div>
+
+        </div>
+
+
+        <!-- Attendance -->
+
+        <div class="report-panel">
+
+            <div class="report-panel-header">
+
+                <div>
+
+                    <h2>
+                        Attendance Summary
+                    </h2>
+
+                    <p>
+                        Present vs absent attendance
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="chart-container small-chart">
+
+                <canvas
+                    id="reportsAttendanceChart">
+                </canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Report Actions -->
+
+    <div class="report-actions">
+
+       <div class="report-actions">
+
+    <button onclick="exportPDF()">
+        Export PDF
+    </button>
+
+    <button onclick="exportExcel()">
+        Export Excel
+    </button>
+
+</div>
+
+    </div>
+
+</div>

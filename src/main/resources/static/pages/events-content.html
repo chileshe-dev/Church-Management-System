@@ -1,0 +1,92 @@
+<h1>Events</h1>
+
+<div class="toolbar">
+
+    <input
+        type="text"
+        id="searchEvent"
+        placeholder="Search events...">
+
+    <button id="addEventBtn">
+        + Add Event
+    </button>
+
+</div>
+
+<table>
+
+    <thead>
+
+        <tr>
+
+            <th>ID</th>
+            <th>Event Name</th>
+            <th>Date</th>
+            <th>Location</th>
+            <th>Description</th>
+            <th>Actions</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody id="eventsBody">
+
+    </tbody>
+
+</table>
+
+
+<!-- Event Modal -->
+
+<div id="eventModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2 id="eventModalTitle">
+            Add Event
+        </h2>
+
+        <label>Event Name</label>
+
+        <input
+            type="text"
+            id="eventName">
+
+        <label>Date</label>
+
+        <input
+            type="date"
+            id="eventDate">
+
+        <label>Location</label>
+
+        <input
+            type="text"
+            id="location">
+
+        <label>Description</label>
+
+        <textarea
+            id="description"
+            rows="4"></textarea>
+
+        <div class="modal-buttons">
+
+            <button id="saveEventBtn">
+
+                Save
+
+            </button>
+
+            <button id="cancelEventBtn">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

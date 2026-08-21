@@ -1,0 +1,80 @@
+<h1>Attendance</h1>
+
+<div class="toolbar">
+
+    <input
+        type="text"
+        id="searchAttendance"
+        placeholder="Search attendance...">
+
+    <button id="addAttendanceBtn">
+        + Mark Attendance
+    </button>
+
+</div>
+
+<table>
+
+    <thead>
+
+        <tr>
+
+            <th>ID</th>
+            <th>Member</th>
+            <th>Event</th>
+            <th>Status</th>
+            <th>Actions</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody id="attendanceBody">
+
+    </tbody>
+
+</table>
+
+
+<!-- Attendance Modal -->
+
+<div id="attendanceModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2 id="attendanceModalTitle">
+            Mark Attendance
+        </h2>
+
+        <label>Member</label>
+
+        <select id="attendanceMember"></select>
+
+        <label>Event</label>
+
+        <select id="attendanceEvent"></select>
+
+        <label>Status</label>
+
+        <select id="attendanceStatus">
+
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+
+        </select>
+
+        <div class="modal-buttons">
+
+            <button id="saveAttendanceBtn">
+                Save
+            </button>
+
+            <button id="cancelAttendanceBtn">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

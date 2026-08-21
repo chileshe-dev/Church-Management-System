@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Members</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h1>Member Management</h1>
+
+<h2>Add Member</h2>
+
+<form id="memberForm">
+
+    <input type="hidden"
+           id="memberId">
+
+    <input type="text"
+           id="firstName"
+           placeholder="First Name"
+           required>
+
+    <input type="text"
+           id="lastName"
+           placeholder="Last Name"
+           required>
+
+    <input type="email"
+           id="email"
+           placeholder="Email">
+
+    <input type="text"
+           id="phone"
+           placeholder="Phone">
+
+    <input type="text"
+           id="address"
+           placeholder="Address">
+
+    <button type="submit">
+        Save Member
+    </button>
+
+</form>
+
+<hr>
+
+<h2>Members List</h2>
+
+<table border="1">
+
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+
+    <tbody id="memberTable">
+    </tbody>
+
+</table>
+
+<script src="js/members.js"></script>
+
+</body>
+</html>

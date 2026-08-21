@@ -1,0 +1,91 @@
+<h1>Contributions</h1>
+
+<div class="toolbar">
+
+    <input
+        type="text"
+        id="searchContribution"
+        placeholder="Search contributions...">
+
+    <button id="addContributionBtn">
+        + Add Contribution
+    </button>
+
+</div>
+
+<table>
+
+    <thead>
+
+        <tr>
+
+            <th>ID</th>
+            <th>Member</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Actions</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody id="contributionsBody">
+
+    </tbody>
+
+</table>
+
+
+<!-- Contribution Modal -->
+
+<div id="contributionModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2 id="contributionModalTitle">
+            Add Contribution
+        </h2>
+
+        <label>Member</label>
+
+        <select id="memberSelect"></select>
+
+        <label>Contribution Type</label>
+
+        <select id="contributionType">
+
+            <option value="Tithe">Tithe</option>
+            <option value="Offering">Offering</option>
+            <option value="Donation">Donation</option>
+
+        </select>
+
+        <label>Amount</label>
+
+        <input
+            type="number"
+            id="amount"
+            step="0.01">
+
+        <label>Date</label>
+
+        <input
+            type="date"
+            id="contributionDate">
+
+        <div class="modal-buttons">
+
+            <button id="saveContributionBtn">
+                Save
+            </button>
+
+            <button id="cancelContributionBtn">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

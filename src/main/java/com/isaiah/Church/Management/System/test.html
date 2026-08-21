@@ -1,7 +1,9 @@
-POST http://localhost:8080/members
-Content-Type: application/json
 
-{
-  "name": "John Doe",
-  "email": "john@example.com"
+Invoke-RestMethod `
+-Uri "http://localhost:8080/users/login" `
+-Method POST `
+-ContentType "application/json" `
+-Body '{
+    "username":"isaiah",
+    "password":"admin123"
 }

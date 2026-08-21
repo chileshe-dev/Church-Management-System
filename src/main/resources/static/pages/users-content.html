@@ -1,0 +1,84 @@
+<h1>Users</h1>
+
+<div class="toolbar">
+
+    <input
+        type="text"
+        id="searchUser"
+        placeholder="Search users...">
+
+    <button id="addUserBtn">
+        + Add User
+    </button>
+
+</div>
+
+<table>
+
+    <thead>
+
+        <tr>
+
+            <th>ID</th>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Actions</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody id="usersBody">
+
+    </tbody>
+
+</table>
+
+
+<div id="userModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2 id="userModalTitle">
+            Add User
+        </h2>
+
+        <label>Username</label>
+
+        <input
+            type="text"
+            id="userUsername">
+
+        <label>Password</label>
+
+        <input
+            type="password"
+            id="userPassword">
+
+        <label>Role</label>
+
+        <select id="userRole">
+
+            <option value="ADMIN">ADMIN</option>
+
+            <option value="PASTOR">PASTOR</option>
+
+            <option value="TREASURER">TREASURER</option>
+
+        </select>
+
+        <div class="modal-buttons">
+
+            <button id="saveUserBtn">
+                Save
+            </button>
+
+            <button id="cancelUserBtn">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
