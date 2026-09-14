@@ -17,28 +17,71 @@ public class SecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http)
-            throws Exception {
+    public SecurityFilterChain securityFilterChain(
+            HttpSecurity http) throws Exception {
 
         http
+
             .csrf(csrf -> csrf.disable())
 
             .authorizeHttpRequests(auth -> auth
 
+                // ==================================
+                // PUBLIC PAGES
+                // ==================================
+
                 .requestMatchers(
-                    "/",
-                    "/login.html",
-                    "/css/**",
-                    "/js/**",
-                    "/favicon.ico"
-                ).permitAll()
+    "/",
+    "/login.html",
+    "/register.html",
+
+    "/member-login.html",
+    "/member-dashboard.html",
+    "/member-contributions.html",
+    "/member-attendance.html",
+     "/member-events.html",
+
+    "/member-registration",
+    "/member-login",
+    "/member-login/logout",
+    "/member-account/me",
+    "/member-contributions",
+    "/member-payments",
+    "/member-events",
+    "/member-attendance",
+
+
+    "/css/**",
+    "/js/**",
+    "/favicon.ico"
+)
+.permitAll()
+
+                // ==================================
+                // MEMBER DASHBOARD ENTRY POINT
+                // ==================================
+
+                .requestMatchers("/member-dashboard")
+                .permitAll()
+
+                // ==================================
+                // STAFF LOGIN
+                // ==================================
 
                 .requestMatchers("/login")
                 .permitAll()
 
+                // ==================================
+                // EVERYTHING ELSE
+                // ==================================
+
                 .anyRequest()
                 .authenticated()
             )
+
+            // ==================================
+            // STAFF LOGIN
+            // ==================================
 
             .formLogin(form -> form
 
@@ -46,12 +89,21 @@ public class SecurityConfig {
 
                 .loginProcessingUrl("/login")
 
-                .defaultSuccessUrl("/dashboard.html", true)
+                .defaultSuccessUrl(
+                    "/dashboard.html",
+                    true
+                )
 
-                .failureUrl("/login.html?error=true")
+                .failureUrl(
+                    "/login.html?error=true"
+                )
 
                 .permitAll()
             )
+
+            // ==================================
+            // STAFF LOGOUT
+            // ==================================
 
             .logout(logout -> logout
 

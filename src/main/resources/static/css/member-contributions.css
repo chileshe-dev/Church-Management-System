@@ -1,0 +1,672 @@
+/* =========================================
+   Member Contributions
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f4f7fb;
+
+    color: #1f2937;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   Top Navigation
+   ========================================= */
+
+.topbar {
+    height: 76px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 50px;
+}
+
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.brand-icon {
+    width: 42px;
+
+    height: 42px;
+
+    background: #1e4f8a;
+
+    color: white;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 21px;
+
+    font-weight: bold;
+}
+
+
+.brand h1 {
+    font-size: 18px;
+
+    color: #1f3b5b;
+
+    margin-bottom: 3px;
+}
+
+
+.brand span {
+    font-size: 12px;
+
+    color: #7b8794;
+}
+
+
+.back-btn {
+    text-decoration: none;
+
+    background: white;
+
+    color: #374151;
+
+    border: 1px solid #d1d5db;
+
+    padding: 10px 18px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    transition: 0.2s ease;
+}
+
+
+.back-btn:hover {
+    background: #f3f4f6;
+
+    border-color: #9ca3af;
+}
+
+
+/* =========================================
+   Main Container
+   ========================================= */
+
+.page-container {
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    padding: 40px 25px 50px;
+}
+
+
+/* =========================================
+   Page Heading
+   ========================================= */
+
+.page-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 25px;
+}
+
+
+.page-label {
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    color: #1e4f8a;
+
+    margin-bottom: 7px;
+}
+
+
+.page-heading h2 {
+    font-size: 30px;
+
+    color: #243b53;
+
+    margin-bottom: 8px;
+}
+
+
+.page-heading > div:first-child > p:last-child {
+    color: #7b8794;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   Total Card
+   ========================================= */
+
+.total-card {
+    min-width: 220px;
+
+    background: linear-gradient(
+        135deg,
+        #1e4f8a,
+        #2875b8
+    );
+
+    color: white;
+
+    border-radius: 12px;
+
+    padding: 20px 25px;
+
+    box-shadow:
+        0 7px 18px rgba(30, 79, 138, 0.15);
+}
+
+
+.total-card span {
+    display: block;
+
+    font-size: 12px;
+
+    opacity: 0.85;
+
+    margin-bottom: 7px;
+}
+
+
+.total-card strong {
+    display: block;
+
+    font-size: 25px;
+}
+
+
+/* =========================================
+   Cards
+   ========================================= */
+
+.contribution-card,
+.history-card {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 28px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   Section Heading
+   ========================================= */
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+.section-icon {
+    width: 44px;
+
+    height: 44px;
+
+    flex-shrink: 0;
+
+    background: #edf4fb;
+
+    color: #1e4f8a;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 21px;
+}
+
+
+.section-heading h3 {
+    font-size: 19px;
+
+    color: #243b53;
+
+    margin-bottom: 4px;
+}
+
+
+.section-heading p {
+    font-size: 13px;
+
+    color: #7b8794;
+}
+
+
+/* =========================================
+   Contribution Form
+   ========================================= */
+
+.contribution-form {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.form-group label {
+    font-size: 13px;
+
+    font-weight: bold;
+
+    color: #374151;
+}
+
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    height: 45px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 7px;
+
+    padding: 0 13px;
+
+    background: white;
+
+    color: #374151;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #1e4f8a;
+
+    box-shadow:
+        0 0 0 3px rgba(30, 79, 138, 0.1);
+}
+
+
+.input-with-symbol {
+    position: relative;
+}
+
+
+.input-with-symbol span {
+    position: absolute;
+
+    left: 13px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #7b8794;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+.input-with-symbol input {
+    padding-left: 30px;
+}
+
+
+.form-submit {
+    grid-column: 1 / -1;
+
+    margin-top: 3px;
+}
+
+
+.submit-btn {
+    border: none;
+
+    background: #1e4f8a;
+
+    color: white;
+
+    padding: 12px 22px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.submit-btn:hover {
+    background: #173e6d;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   Message
+   ========================================= */
+
+.contribution-message {
+    margin-top: 18px;
+
+    padding: 12px 15px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    color: #374151;
+}
+
+
+/* =========================================
+   Table
+   ========================================= */
+
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 750px;
+}
+
+
+thead {
+    background: #f8fafc;
+}
+
+
+th {
+    text-align: left;
+
+    padding: 14px 15px;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+
+    color: #64748b;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+td {
+    padding: 15px;
+
+    font-size: 14px;
+
+    color: #4b5563;
+
+    border-bottom: 1px solid #edf0f3;
+}
+
+
+tbody tr:hover {
+    background: #fafcff;
+}
+
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================
+   Empty Table
+   ========================================= */
+
+tbody td[colspan] {
+    text-align: center;
+
+    padding: 35px 15px;
+
+    color: #7b8794;
+}
+
+
+/* =========================================
+   Footer
+   ========================================= */
+
+.page-footer {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 20px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.footer-icon {
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: #edf4fb;
+
+    color: #1e4f8a;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+
+.page-footer strong {
+    font-size: 14px;
+
+    color: #374151;
+}
+
+
+.page-footer p {
+    font-size: 13px;
+
+    color: #7b8794;
+
+    margin-top: 3px;
+}
+
+
+/* =========================================
+   Responsive
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .topbar {
+        padding: 0 20px;
+    }
+
+
+    .page-container {
+        padding: 30px 18px 40px;
+    }
+
+
+    .page-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .total-card {
+        width: 100%;
+    }
+
+
+    .contribution-form {
+        grid-template-columns: 1fr;
+    }
+
+
+    .form-submit {
+        grid-column: auto;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .topbar {
+        height: auto;
+
+        min-height: 70px;
+
+        padding: 15px;
+
+        gap: 12px;
+    }
+
+
+    .brand h1 {
+        font-size: 13px;
+    }
+
+
+    .brand span {
+        font-size: 10px;
+    }
+
+
+    .brand-icon {
+        width: 36px;
+
+        height: 36px;
+
+        font-size: 18px;
+    }
+
+
+    .back-btn {
+        padding: 8px 12px;
+
+        font-size: 12px;
+    }
+
+
+    .page-heading h2 {
+        font-size: 24px;
+    }
+
+
+    .contribution-card,
+    .history-card {
+        padding: 20px;
+    }
+
+
+    .section-heading {
+        align-items: flex-start;
+    }
+
+
+    .page-footer {
+        align-items: flex-start;
+
+        padding: 18px;
+    }
+
+}

@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface ContributionRepository
         extends JpaRepository<Contribution, Integer> {
+   
+    List<Contribution> findByMemberMemberId(Integer memberId);            
 
     @Query("SELECT COALESCE(SUM(c.amount),0) FROM Contribution c")
     Double getTotalContributionAmount();

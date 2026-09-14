@@ -53,4 +53,7 @@ public class AttendanceService {
     public void deleteAttendance(Integer id) {
         repository.deleteById(id);
     }
+    public List<Attendance> getMemberAttendance(Integer memberId) {
+    return repository.findByMemberMemberId(memberId);
+}
 }

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Member Login</title>
+
+    <link rel="stylesheet"
+          href="/css/style.css">
+
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <h1>Church Member Login</h1>
+
+        <p>Login to access your member account.</p>
+
+
+        <form id="memberLoginForm">
+
+            <div>
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    required
+                >
+
+            </div>
+
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+
+        <p id="loginMessage"></p>
+
+
+        <p>
+            Don't have an account?
+            <a href="/register.html">
+                Register here
+            </a>
+        </p>
+
+    </div>
+
+
+    <script src="/js/member-login.js"></script>
+
+</body>
+
+</html>

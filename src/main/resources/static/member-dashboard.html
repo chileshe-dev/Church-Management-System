@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Member Dashboard | Church Management System</title>
+
+    <link rel="stylesheet"
+          href="/css/member-dashboard.css">
+
+</head>
+
+<body >
+
+    <!-- Navigation -->
+    <header class="topbar">
+
+        <div class="brand">
+            <div class="brand-icon">✝</div>
+
+            <div>
+                <h1>Church Management System</h1>
+                <span>Member Portal</span>
+            </div>
+        </div>
+
+        <button id="logoutBtn" class="logout-btn">
+            Logout
+        </button>
+
+    </header>
+
+
+    <main class="dashboard-container">
+
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+
+            <div>
+
+                <p class="welcome-label">
+                    MEMBER DASHBOARD
+                </p>
+
+                <h2>
+                    Welcome,
+                    <span id="memberName"></span> 👋
+                </h2>
+
+                <p class="welcome-text">
+                    Welcome to your church member portal.
+                    Manage your contributions, attendance and
+                    upcoming church events from one place.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Account Information -->
+        <section class="account-card">
+
+            <div class="section-heading">
+
+                <div class="section-icon">
+                    👤
+                </div>
+
+                <div>
+                    <h3>My Account</h3>
+
+                    <p>
+                        Your member account information
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="account-details">
+
+                <div class="account-item">
+
+                    <span class="detail-label">
+                        Username
+                    </span>
+
+                    <strong id="memberUsername">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="account-item">
+
+                    <span class="detail-label">
+                        Account Status
+                    </span>
+
+                    <strong
+                        id="memberStatus"
+                        class="status-badge">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Quick Actions -->
+        <section class="actions-section">
+
+            <div class="section-title">
+
+                <h3>Quick Actions</h3>
+
+                <p>
+                    Access your member services
+                </p>
+
+            </div>
+
+
+            <div class="action-grid">
+
+
+                <!-- Make Contribution -->
+                <a
+                    href="/member-contributions.html"
+                    class="action-card contribution">
+
+                    <div class="action-icon">
+                        💰
+                    </div>
+
+                    <div class="action-content">
+
+                        <h4>Make a Contribution</h4>
+
+                        <p>
+                            Give your tithe, offering or other
+                            church contribution.
+                        </p>
+
+                    </div>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- Contributions -->
+                <a
+                    href="/member-contributions.html"
+                    class="action-card">
+
+                    <div class="action-icon">
+                        📊
+                    </div>
+
+                    <div class="action-content">
+
+                        <h4>My Contributions</h4>
+
+                        <p>
+                            View your contribution history
+                            and records.
+                        </p>
+
+                    </div>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- Events -->
+                <a
+                    href="/member-events.html"
+                    class="action-card">
+
+                    <div class="action-icon">
+                        📅
+                    </div>
+
+                    <div class="action-content">
+
+                        <h4>Upcoming Events</h4>
+
+                        <p>
+                            See upcoming church events,
+                            dates and locations.
+                        </p>
+
+                    </div>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <!-- Attendance -->
+                <a
+                    href="/member-attendance.html"
+                    class="action-card">
+
+                    <div class="action-icon">
+                        ✓
+                    </div>
+
+                    <div class="action-content">
+
+                        <h4>Attendance History</h4>
+
+                        <p>
+                            View your church attendance
+                            records.
+                        </p>
+
+                    </div>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer Message -->
+        <section class="dashboard-footer">
+
+            <div class="footer-icon">
+                ✝
+            </div>
+
+            <div>
+                <strong>Stay connected with your church.</strong>
+
+                <p>
+                    Keep track of your giving, attendance
+                    and church activities.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="/js/member-dashboard.js"></script>
+
+</body>
+
+</html>

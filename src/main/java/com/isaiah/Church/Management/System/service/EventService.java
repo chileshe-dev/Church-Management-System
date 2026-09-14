@@ -4,6 +4,7 @@ import com.isaiah.Church.Management.System.model.Event;
 import com.isaiah.Church.Management.System.repository.EventRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -45,5 +46,11 @@ public class EventService {
         }
 
         return null;
+    }
+      // Get events that are happening today or in the future
+    public List<Event> getUpcomingEvents() {
+        return repository
+                .findByEventDateGreaterThanEqualOrderByEventDateAsc(
+                        LocalDate.now());
     }
 }

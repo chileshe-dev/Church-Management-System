@@ -1,5 +1,10 @@
+mSELECT DATABASE();
 SHOW TABlES;
 
-USE church_management;
+use church_management;
 
-SHOW TABlES
+
+
+DESCRIBE members;
+SELECT account_id, member_id, username, status
+FROM member_accounts;

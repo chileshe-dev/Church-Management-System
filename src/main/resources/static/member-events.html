@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Upcoming Events | Church Management System</title>
+
+    <link rel="stylesheet" href="/css/member-events.css">
+</head>
+
+<body>
+
+    <header class="page-header">
+        <div>
+            <h1>Upcoming Events</h1>
+            <p>See what's happening at church.</p>
+        </div>
+
+        <a href="/member-dashboard.html" class="back-btn">
+            ← Dashboard
+        </a>
+    </header>
+
+    <main class="events-container">
+
+        <div id="loading" class="message">
+            Loading upcoming events...
+        </div>
+
+        <div id="error" class="message error hidden"></div>
+
+        <div id="no-events" class="message hidden">
+            There are no upcoming events at the moment.
+        </div>
+
+        <div id="events-list" class="events-grid"></div>
+
+    </main>
+
+    <script src="/js/member-events.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance History | Church Management System</title>
+
+    <link rel="stylesheet" href="/css/member-attendance.css">
+</head>
+
+<body>
+
+    <header class="page-header">
+        <div>
+            <h1>Attendance History</h1>
+            <p>View your church attendance records.</p>
+        </div>
+
+        <a href="/member-dashboard.html" class="back-btn">
+            ← Dashboard
+        </a>
+    </header>
+
+
+    <main class="attendance-container">
+
+        <!-- Loading -->
+        <div id="loading" class="message">
+            Loading attendance history...
+        </div>
+
+        <!-- Error -->
+        <div id="error" class="message error hidden"></div>
+
+        <!-- No records -->
+        <div id="no-attendance" class="message hidden">
+            You do not have any attendance records yet.
+        </div>
+
+        <!-- Attendance records -->
+        <div id="attendance-list" class="attendance-list"></div>
+
+    </main>
+
+
+    <script src="/js/member-attendance.js"></script>
+
+</body>
+</html>

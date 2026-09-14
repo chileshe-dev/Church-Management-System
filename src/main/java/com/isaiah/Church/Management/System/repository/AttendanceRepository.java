@@ -17,4 +17,6 @@ public interface AttendanceRepository
             """)
     List<Object[]> getAttendanceSummary();
 
+    // Get attendance records belonging to one member
+    List<Attendance> findByMemberMemberId(Integer memberId);
 }
