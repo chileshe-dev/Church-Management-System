@@ -1,81 +1,206 @@
-<h1>Users</h1>
+<div class="users-page">
 
-<div class="toolbar">
+    <div class="page-header">
+        <div>
+            <span class="page-label">USERS</span>
+            <h2>User Management</h2>
+            <p>Manage staff accounts and their system access roles.</p>
+        </div>
 
-    <input
-        type="text"
-        id="searchUser"
-        placeholder="Search users...">
-
-    <button id="addUserBtn">
-        + Add User
-    </button>
-
-</div>
-
-<table>
-
-    <thead>
-
-        <tr>
-
-            <th>ID</th>
-            <th>Username</th>
-            <th>Role</th>
-            <th>Actions</th>
-
-        </tr>
-
-    </thead>
-
-    <tbody id="usersBody">
-
-    </tbody>
-
-</table>
-
-
-<div id="userModal" class="modal">
-
-    <div class="modal-content">
-
-        <h2 id="userModalTitle">
+        <button id="addUserBtn" class="primary-btn">
+            <i class="fa-solid fa-user-plus"></i>
             Add User
-        </h2>
+        </button>
+    </div>
 
-        <label>Username</label>
 
-        <input
-            type="text"
-            id="userUsername">
+    <div class="content-card">
 
-        <label>Password</label>
+        <div class="card-toolbar">
+            <div>
+                <h3>System Users</h3>
+                <p>View and manage authorized church administration users.</p>
+            </div>
 
-        <input
-            type="password"
-            id="userPassword">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
 
-        <label>Role</label>
+                <input
+                    type="text"
+                    id="searchUser"
+                    placeholder="Search users...">
+            </div>
+        </div>
 
-        <select id="userRole">
 
-            <option value="ADMIN">ADMIN</option>
+        <div class="table-container">
 
-            <option value="PASTOR">PASTOR</option>
+            <table class="data-table">
 
-            <option value="TREASURER">TREASURER</option>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
 
-        </select>
+                <tbody id="usersBody"></tbody>
 
-        <div class="modal-buttons">
+            </table>
 
-            <button id="saveUserBtn">
-                Save
-            </button>
+        </div>
 
-            <button id="cancelUserBtn">
-                Cancel
-            </button>
+    </div>
+
+
+    <!-- User Modal -->
+
+    <div id="userModal" class="modal">
+
+        <div class="modal-content user-modal">
+
+            <div class="modal-header">
+
+                <div class="modal-title-area">
+
+                    <div class="modal-icon user-modal-icon">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+
+                    <div>
+                        <h3 id="userModalTitle">
+                            Add User
+                        </h3>
+
+                        <p>
+                            Create a staff account and assign a role.
+                        </p>
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    onclick="document.getElementById('userModal').style.display='none'">
+
+                    &times;
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="form-grid">
+
+                    <!-- Username -->
+
+                    <div class="input-group full-width">
+
+                        <label for="userUsername">
+                            Username
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="userUsername"
+                                placeholder="Enter username">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Password -->
+
+                    <div class="input-group full-width">
+
+                        <label for="userPassword">
+                            Password
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="userPassword"
+                                placeholder="Enter password">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Role -->
+
+                    <div class="input-group full-width">
+
+                        <label for="userRole">
+                            User Role
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-user-tag"></i>
+
+                            <select id="userRole">
+
+                                <option value="ADMIN">
+                                    ADMIN
+                                </option>
+
+                                <option value="PASTOR">
+                                    PASTOR
+                                </option>
+
+                                <option value="TREASURER">
+                                    TREASURER
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-buttons">
+
+                <button
+                    type="button"
+                    id="cancelUserBtn"
+                    class="secondary-btn">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="button"
+                    id="saveUserBtn"
+                    class="primary-btn">
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save User
+
+                </button>
+
+            </div>
 
         </div>
 

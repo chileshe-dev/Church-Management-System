@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Make a Contribution | Church Management System</title>
+
+    <link rel="stylesheet"
+          href="/css/member-make-contribution.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="page-header">
+
+    <div class="header-brand">
+
+        <div class="brand-icon">
+            <i class="fa-solid fa-church"></i>
+        </div>
+
+        <div>
+            <span class="header-label">
+                MEMBER PORTAL
+            </span>
+
+            <h1>
+                Make a Contribution
+            </h1>
+
+            <p>
+                Give your tithe, offering, donation, or other contribution.
+            </p>
+        </div>
+
+    </div>
+
+
+    <a href="/member-dashboard.html"
+       class="back-btn">
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+        <span>Dashboard</span>
+
+    </a>
+
+</header>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main class="contribution-container">
+
+
+    <!-- INTRODUCTION -->
+
+    <section class="intro-section">
+
+        <span class="section-label">
+            GIVING
+        </span>
+
+        <h2>
+            Support the work of the church
+        </h2>
+
+        <p>
+            Record your contribution by selecting the type,
+            amount, date and payment method below.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         CONTRIBUTION CARD
+    ========================= -->
+
+    <section class="contribution-card">
+
+
+        <div class="card-header">
+
+            <div class="card-icon">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+            </div>
+
+            <div>
+                <h2>
+                    Contribution Details
+                </h2>
+
+                <p>
+                    Enter the details of your contribution.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="card-divider"></div>
+
+
+        <form id="contributionForm">
+
+
+            <!-- CONTRIBUTION TYPE -->
+
+            <div class="form-group">
+
+                <label for="contributionType">
+                    Contribution Type
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-solid fa-list"></i>
+
+                    <select id="contributionType"
+                            required>
+
+                        <option value="">
+                            Select Type
+                        </option>
+
+                        <option value="Offering">
+                            Offering
+                        </option>
+
+                        <option value="Tithe">
+                            Tithe
+                        </option>
+
+                        <option value="Donation">
+                            Donation
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- AMOUNT -->
+
+            <div class="form-group">
+
+                <label for="amount">
+                    Amount
+                </label>
+
+                <div class="input-wrapper amount-wrapper">
+
+                    <span class="currency-symbol">
+                        K
+                    </span>
+
+                    <input
+                        type="number"
+                        id="amount"
+                        min="1"
+                        step="0.01"
+                        placeholder="Enter amount"
+                        required
+                    >
+
+                </div>
+
+                <small class="field-help">
+                    Enter the amount you would like to contribute.
+                </small>
+
+            </div>
+
+
+            <!-- DATE -->
+
+            <div class="form-group">
+
+                <label for="contributionDate">
+                    Contribution Date
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <input
+                        type="date"
+                        id="contributionDate"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- PAYMENT METHOD -->
+
+            <div class="form-group">
+
+                <label for="paymentMethod">
+                    Payment Method
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-solid fa-credit-card"></i>
+
+                    <select id="paymentMethod"
+                            required>
+
+                        <option value="">
+                            Select Payment Method
+                        </option>
+
+                        <option value="Cash">
+                            Cash
+                        </option>
+
+                        <option value="Mobile Money">
+                            Mobile Money
+                        </option>
+
+                        <option value="Bank Transfer">
+                            Bank Transfer
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                class="submit-btn">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <span>
+                    Record Contribution
+                </span>
+
+            </button>
+
+        </form>
+
+
+        <p id="contributionMessage"
+           class="message">
+        </p>
+
+
+    </section>
+
+
+    <!-- =========================
+         INFORMATION CARD
+    ========================= -->
+
+    <section class="giving-note">
+
+        <div class="note-icon">
+            <i class="fa-solid fa-heart"></i>
+        </div>
+
+        <div>
+
+            <h3>
+                Thank you for giving
+            </h3>
+
+            <p>
+                Your generosity helps support the ministry,
+                activities and work of the church community.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- BACK TO DASHBOARD -->
+
+    <div class="bottom-navigation">
+
+        <a href="/member-dashboard.html">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Member Dashboard
+        </a>
+
+    </div>
+
+</main>
+
+
+<script src="/js/member-make-contribution.js"></script>
+
+</body>
+
+</html>

@@ -53,4 +53,11 @@ public class EventService {
                 .findByEventDateGreaterThanEqualOrderByEventDateAsc(
                         LocalDate.now());
     }
+
+    // Get events that have already happened or are happening today
+public List<Event> getAttendanceEligibleEvents() {
+    return repository
+            .findByEventDateLessThanEqualOrderByEventDateDesc(
+                    LocalDate.now());
+}
 }

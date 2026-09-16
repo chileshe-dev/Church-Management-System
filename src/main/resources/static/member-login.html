@@ -8,56 +8,90 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Member Login</title>
+    <title>Member Login | Church Management System</title>
 
     <link rel="stylesheet"
-          href="/css/style.css">
+          href="/css/member-login.css">
 
 </head>
 
 <body>
 
-    <div class="login-container">
+<div class="login-page">
 
-        <h1>Church Member Login</h1>
+    <div class="login-card">
 
-        <p>Login to access your member account.</p>
+        <div class="login-icon">
+            👤
+        </div>
+
+        <div class="login-header">
+
+            <h1>Church Member Portal</h1>
+
+            <p>Member Login</p>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>Welcome Back</h2>
+
+        <p class="login-subtitle">
+            Sign in to access your church member account.
+        </p>
 
 
         <form id="memberLoginForm">
 
-            <div>
+            <div class="input-group">
 
                 <label for="username">
                     Username
                 </label>
 
-                <input
-                    type="text"
-                    id="username"
-                    required
-                >
+                <div class="input-wrapper">
+
+                    <span class="input-icon">👤</span>
+
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Enter your username"
+                        required>
+
+                </div>
 
             </div>
 
 
-            <div>
+            <div class="input-group">
 
                 <label for="password">
                     Password
                 </label>
 
-                <input
-                    type="password"
-                    id="password"
-                    required
-                >
+                <div class="input-wrapper">
+
+                    <span class="input-icon">🔒</span>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required>
+
+                </div>
 
             </div>
 
 
-            <button type="submit">
-                Login
+            <button type="submit" class="login-button">
+
+                <span>Login</span>
+
+                <span class="button-arrow">→</span>
+
             </button>
 
         </form>
@@ -66,17 +100,29 @@
         <p id="loginMessage"></p>
 
 
-        <p>
-            Don't have an account?
+        <div class="register-section">
+
+            <p>
+                Don't have a member account?
+            </p>
+
             <a href="/register.html">
-                Register here
+                Create an account
             </a>
-        </p>
+
+        </div>
+
+
+        <a href="/index.html" class="back-home">
+            ← Back to Main Page
+        </a>
 
     </div>
 
+</div>
 
-    <script src="/js/member-login.js"></script>
+
+<script src="/js/member-login.js"></script>
 
 </body>
 

@@ -1,118 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Church Management System</title>
 
-    <link rel="stylesheet" href="css/dashboard.css">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Church Management System</title>
+
+    <link rel="stylesheet" href="/css/dashboard.css">
+
     <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
 </head>
+
 <body>
 
 <div class="container">
 
-    <!-- Sidebar -->
-    <div class="sidebar">
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
 
-        <h2>Church MS</h2>
+    <aside class="sidebar">
 
-  <ul>
+        <div class="sidebar-brand">
 
-    <li>
-        <a href="#" data-page="dashboard">
-            <i class="fa-solid fa-house"></i>
-            Dashboard
-        </a>
-    </li>
+            <div class="brand-icon">
+                <i class="fa-solid fa-church"></i>
+            </div>
 
-    
-    <li id="membersMenu">
-        <a href="#" data-page="members">
-            <i class="fa-solid fa-users"></i>
-            Members
-        </a>
-    </li>
+            <div>
+                <h2>Church MS</h2>
+                <span>Administration</span>
+            </div>
 
-    <li id="contributionsMenu">
-        <a href="#" data-page="contributions">
-            <i class="fa-solid fa-hand-holding-dollar"></i>
-            Contributions
-        </a>
-    </li>
-
-    <li id="eventsMenu">
-        <a href="#" data-page="events">
-            <i class="fa-solid fa-calendar-days"></i>
-            Events
-        </a>
-    </li>
-
-    <li id="attendanceMenu">
-        <a href="#" data-page="attendance">
-            <i class="fa-solid fa-check"></i>
-            Attendance
-        </a>
-    </li>
-
-    <li id="ministriesMenu">
-        <a href="#" data-page="ministries">
-            <i class="fa-solid fa-music"></i>
-            Ministries
-        </a>
-    </li>
-
-    <li id="usersMenu">
-    <a href="#" data-page="users">
-        <i class="fas fa-user-shield"></i>
-        Users
-    </a>
-</li>
-
-    <li id="ReportsMenu">
-        <a href="#" data-page="reports">
-            <i class="fa-solid fa-chart-line"></i>
-            Reports
-        </a>
-    </li>
-
-</ul>
- </div>
-
-    <!-- Main Content -->
-
-    <div class="main">
-
-    <div class="topbar">
-
-        <div>
-            Welcome,
-            <strong id="username"></strong>
-            (<span id="role"></span>)
         </div>
 
-        <button id="logoutBtn">
-            Logout
-        </button>
 
-    </div>
-
-    <div id="content"></div>
+        <div class="sidebar-section-title">
+            MAIN MENU
+        </div>
 
 
- </div>
+        <ul class="sidebar-menu">
 
- </div>
-<script src="js/members.js"></script>
-<script src="js/contributions.js"></script>
-<script src="js/events.js"></script>
-<script src="js/attendance.js"></script>
-<script src="js/ministries.js"></script>
-<script src="js/users.js"></script>
+            <li>
+                <a href="#" data-page="dashboard" class="active">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+            </li>
+
+
+            <li id="membersMenu">
+
+                <a href="#" data-page="members">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <span>Members</span>
+
+                </a>
+
+            </li>
+
+
+            <li id="contributionsMenu">
+
+                <a href="#" data-page="contributions">
+
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+
+                    <span>Contributions</span>
+
+                </a>
+
+            </li>
+
+
+            <li id="eventsMenu">
+
+                <a href="#" data-page="events">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <span>Events</span>
+
+                </a>
+
+            </li>
+
+
+            <li id="attendanceMenu">
+
+                <a href="#" data-page="attendance">
+
+                    <i class="fa-solid fa-clipboard-check"></i>
+
+                    <span>Attendance</span>
+
+                </a>
+
+            </li>
+
+
+            <li id="ministriesMenu">
+
+                <a href="#" data-page="ministries">
+
+                    <i class="fa-solid fa-music"></i>
+
+                    <span>Ministries</span>
+
+                </a>
+
+            </li>
+
+
+            <li id="usersMenu">
+
+                <a href="#" data-page="users">
+
+                    <i class="fa-solid fa-user-shield"></i>
+
+                    <span>Users</span>
+
+                </a>
+
+            </li>
+
+
+            <li id="ReportsMenu">
+
+                <a href="#" data-page="reports">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <span>Reports</span>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="church-message">
+
+                <i class="fa-solid fa-heart"></i>
+
+                <div>
+
+                    <strong>Serving the church</strong>
+
+                    <span>Connecting people in faith.</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <div class="page-title">
+
+                    <span>Church Management System</span>
+
+                    <h1>Administration Dashboard</h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="user-info">
+
+                    <div class="user-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                    <div class="user-details">
+
+                        <strong id="username"></strong>
+
+                        <span id="role"></span>
+
+                    </div>
+
+                </div>
+
+
+                <button id="logoutBtn" class="logout-btn">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>Logout</span>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+
+        <section id="content">
+
+            <!-- dashboard.js loads content here -->
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
+<script src="/js/members.js"></script>
+
+<script src="/js/contributions.js"></script>
+
+<script src="/js/events.js"></script>
+
+<script src="/js/attendance.js"></script>
+
+<script src="/js/ministries.js"></script>
+
+<script src="/js/users.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="js/reports.js"></script>
-<script src="js/dashboard.js"></script>
+
+<script src="/js/reports.js"></script>
+
+<script src="/js/dashboard.js"></script>
+
 </body>
+
 </html>

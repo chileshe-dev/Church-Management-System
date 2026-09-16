@@ -483,3 +483,9 @@ function exportPDF() {
     window.location.href = "/reports/export/pdf";
 
 }
+
+function exportExcel() {
+
+    alert("Excel export will be added next.");
+
+}

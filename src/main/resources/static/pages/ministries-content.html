@@ -1,75 +1,196 @@
-<h1>Ministries</h1>
+<div class="ministries-page">
 
-<div class="toolbar">
+    <div class="page-header">
+        <div>
+            <span class="page-label">MINISTRIES</span>
+            <h2>Ministry Management</h2>
+            <p>Manage church ministries, descriptions and ministry leaders.</p>
+        </div>
 
-    <input
-        type="text"
-        id="searchMinistry"
-        placeholder="Search ministries...">
-
-    <button id="addMinistryBtn">
-        + Add Ministry
-    </button>
-
-</div>
-
-<table>
-
-    <thead>
-
-        <tr>
-
-            <th>ID</th>
-            <th>Ministry Name</th>
-            <th>Description</th>
-            <th>Leader</th>
-            <th>Actions</th>
-
-        </tr>
-
-    </thead>
-
-    <tbody id="ministriesBody">
-
-    </tbody>
-
-</table>
-
-<div id="ministryModal" class="modal">
-
-    <div class="modal-content">
-
-        <h2 id="ministryModalTitle">
+        <button id="addMinistryBtn" class="primary-btn">
+            <i class="fa-solid fa-people-group"></i>
             Add Ministry
-        </h2>
+        </button>
+    </div>
 
-        <label>Ministry Name</label>
 
-        <input
-            type="text"
-            id="ministryName">
+    <div class="content-card">
 
-        <label>Description</label>
+        <div class="card-toolbar">
+            <div>
+                <h3>Church Ministries</h3>
+                <p>View and manage the ministries serving the church.</p>
+            </div>
 
-        <textarea
-            id="ministryDescription"
-            rows="4"></textarea>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
 
-        <label>Leader</label>
+                <input
+                    type="text"
+                    id="searchMinistry"
+                    placeholder="Search ministries...">
+            </div>
+        </div>
 
-        <input
-            type="text"
-            id="leaderName">
 
-        <div class="modal-buttons">
+        <div class="table-container">
 
-            <button id="saveMinistryBtn">
-                Save
-            </button>
+            <table class="data-table">
 
-            <button id="cancelMinistryBtn">
-                Cancel
-            </button>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Ministry Name</th>
+                        <th>Description</th>
+                        <th>Leader</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="ministriesBody"></tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- Ministry Modal -->
+
+    <div id="ministryModal" class="modal">
+
+        <div class="modal-content ministry-modal">
+
+            <div class="modal-header">
+
+                <div class="modal-title-area">
+
+                    <div class="modal-icon ministry-modal-icon">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+
+                    <div>
+                        <h3 id="ministryModalTitle">
+                            Add Ministry
+                        </h3>
+
+                        <p>
+                            Enter the ministry information below.
+                        </p>
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    onclick="document.getElementById('ministryModal').style.display='none'">
+
+                    &times;
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="form-grid">
+
+                    <!-- Ministry Name -->
+
+                    <div class="input-group full-width">
+
+                        <label for="ministryName">
+                            Ministry Name
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-church"></i>
+
+                            <input
+                                type="text"
+                                id="ministryName"
+                                placeholder="Enter ministry name">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Description -->
+
+                    <div class="input-group full-width">
+
+                        <label for="ministryDescription">
+                            Description
+                        </label>
+
+                        <div class="input-wrapper textarea-wrapper">
+
+                            <i class="fa-solid fa-align-left"></i>
+
+                            <textarea
+                                id="ministryDescription"
+                                rows="4"
+                                placeholder="Describe the ministry"></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Leader -->
+
+                    <div class="input-group full-width">
+
+                        <label for="leaderName">
+                            Ministry Leader
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-user-tie"></i>
+
+                            <input
+                                type="text"
+                                id="leaderName"
+                                placeholder="Enter ministry leader">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-buttons">
+
+                <button
+                    type="button"
+                    id="cancelMinistryBtn"
+                    class="secondary-btn">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="button"
+                    id="saveMinistryBtn"
+                    class="primary-btn">
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save Ministry
+
+                </button>
+
+            </div>
 
         </div>
 

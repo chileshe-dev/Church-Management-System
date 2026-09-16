@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Ministries | Church Management System</title>
+
+    <link rel="stylesheet" href="/css/member-ministries.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="brand">
+        <i class="fa-solid fa-church"></i>
+        <span>Church Management System</span>
+    </div>
+
+    <div class="portal-label">
+        Member Portal
+    </div>
+</header>
+
+<main class="container">
+
+    <div class="page-header">
+        <div>
+            <p class="eyebrow">Member Portal</p>
+            <h1>My Ministries</h1>
+            <p class="subtitle">
+                Join a ministry and get involved in serving the church.
+            </p>
+        </div>
+
+        <a href="/member-dashboard.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            Dashboard
+        </a>
+    </div>
+
+    <section class="section">
+        <div class="section-title">
+            <div>
+                <h2>Available Ministries</h2>
+                <p>Choose a ministry you would like to join.</p>
+            </div>
+        </div>
+
+        <div id="ministriesContainer" class="ministries-grid">
+            <div class="loading">
+                <i class="fa-solid fa-spinner fa-spin"></i>
+                Loading ministries...
+            </div>
+        </div>
+    </section>
+
+    <section class="section my-section">
+
+        <div class="section-title">
+            <div>
+                <h2>My Joined Ministries</h2>
+                <p>Ministries you are currently part of.</p>
+            </div>
+        </div>
+
+        <div id="myMinistriesContainer" class="ministries-grid">
+            <div class="loading">
+                <i class="fa-solid fa-spinner fa-spin"></i>
+                Loading your ministries...
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Church Management System</p>
+</footer>
+
+<script src="/js/member-ministries.js"></script>
+
+</body>
+</html>

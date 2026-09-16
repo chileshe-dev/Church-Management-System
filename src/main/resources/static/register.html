@@ -8,102 +8,238 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Member Registration</title>
+    <title>Member Registration | Church Management System</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+          href="/css/register.css">
 
 </head>
 
 <body>
 
-<div class="registration-container">
+<div class="registration-page">
 
-    <h1>Church Member Registration</h1>
+    <div class="registration-card">
 
-    <p>Create your church member account</p>
+        <!-- Header -->
 
-    <form id="registrationForm">
+        <div class="registration-icon">
+            ⛪
+        </div>
 
-        <label>First Name</label>
+        <div class="registration-header">
 
-        <input
-            type="text"
-            id="firstName"
-            required
-        >
+            <h1>Church Member Registration</h1>
 
-        <label>Last Name</label>
+            <p>Create your church member account</p>
 
-        <input
-            type="text"
-            id="lastName"
-            required
-        >
+        </div>
 
-        <label>Email</label>
+        <div class="divider"></div>
 
-        <input
-            type="email"
-            id="email"
-            required
-        >
 
-        <label>Phone Number</label>
+        <!-- Form introduction -->
 
-        <input
-            type="text"
-            id="phone"
-            required
-        >
+        <div class="form-intro">
 
-        <label>Address</label>
+            <h2>Create Your Account</h2>
 
-        <input
-            type="text"
-            id="address"
-            required
-        >
+            <p>
+                Enter your details below to join the church member portal.
+            </p>
 
-        <label>Username</label>
+        </div>
 
-        <input
-            type="text"
-            id="username"
-            required
-        >
 
-        <label>Password</label>
+        <form id="registrationForm">
 
-        <input
-            type="password"
-            id="password"
-            required
-        >
+            <!-- Personal Information -->
 
-        <label>Confirm Password</label>
+            <div class="section-title">
+                <span>1</span>
+                Personal Information
+            </div>
 
-        <input
-            type="password"
-            id="confirmPassword"
-            required
-        >
+            <div class="form-grid">
 
-        <button type="submit">
-            Register
-        </button>
+                <div class="input-group">
 
-        <p id="message"></p>
+                    <label for="firstName">
+                        First Name
+                    </label>
 
-    </form>
+                    <input
+                        type="text"
+                        id="firstName"
+                        placeholder="Enter your first name"
+                        required>
 
-    <p>
-        Already have an account?
-        <a href="/login.html">Login</a>
-    </p>
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="lastName">
+                        Last Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="lastName"
+                        placeholder="Enter your last name"
+                        required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="text"
+                        id="phone"
+                        placeholder="Enter your phone number"
+                        required>
+
+                </div>
+
+
+                <div class="input-group full-width">
+
+                    <label for="address">
+                        Address
+                    </label>
+
+                    <input
+                        type="text"
+                        id="address"
+                        placeholder="Enter your address"
+                        required>
+
+                </div>
+
+            </div>
+
+
+            <!-- Account Information -->
+
+            <div class="section-title account-section-title">
+                <span>2</span>
+                Account Information
+            </div>
+
+            <div class="form-grid">
+
+                <div class="input-group full-width">
+
+                    <label for="username">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Choose a username"
+                        required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Create a password"
+                        required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm your password"
+                        required>
+
+                </div>
+
+            </div>
+
+
+            <!-- Register button -->
+
+            <button type="submit" class="register-button">
+
+                <span>Create Account</span>
+
+                <span class="button-arrow">→</span>
+
+            </button>
+
+
+            <!-- Message -->
+
+            <p id="message"></p>
+
+        </form>
+
+
+        <!-- Login -->
+
+        <div class="login-section">
+
+            <p>
+                Already have a member account?
+            </p>
+
+            <a href="/member-login.html">
+                Login to your account
+            </a>
+
+        </div>
+
+
+        <!-- Back home -->
+
+        <a href="/index.html" class="back-home">
+            ← Back to Main Page
+        </a>
+
+    </div>
 
 </div>
 
-<script src="js/register.js"></script>
+
+<script src="/js/register.js"></script>
 
 </body>
 

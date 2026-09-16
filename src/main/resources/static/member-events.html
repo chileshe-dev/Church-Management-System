@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,38 +8,197 @@
     <title>Upcoming Events | Church Management System</title>
 
     <link rel="stylesheet" href="/css/member-events.css">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 </head>
 
 <body>
 
-    <header class="page-header">
-        <div>
-            <h1>Upcoming Events</h1>
-            <p>See what's happening at church.</p>
+    <!-- =========================
+         Header
+         ========================= -->
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-church"></i>
+            </div>
+
+            <div>
+                <h1>Church Management System</h1>
+                <span>Member Portal</span>
+            </div>
+
         </div>
 
         <a href="/member-dashboard.html" class="back-btn">
-            ← Dashboard
+            <i class="fa-solid fa-arrow-left"></i>
+            Dashboard
         </a>
+
     </header>
+
+
+    <!-- =========================
+         Main Content
+         ========================= -->
 
     <main class="events-container">
 
+        <div class="events-hero">
+   
+    <div class="events-hero-overlay">
+        <div>
+            <span>CONNECT • WORSHIP • GROW</span>
+            <h2>Life Together at Church</h2>
+            <p>Discover upcoming services, gatherings and special events.</p>
+        </div>
+    </div>
+</div>
+
+        <!-- Page introduction -->
+
+        <section class="page-heading">
+
+            <div>
+
+                <div class="page-label">
+                    CHURCH CALENDAR
+                </div>
+
+                <h2>Upcoming Events</h2>
+
+                <p>
+                    Stay connected with what's happening at church.
+                </p>
+
+            </div>
+
+            <div class="calendar-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             Loading Message
+             ========================= -->
+
         <div id="loading" class="message">
-            Loading upcoming events...
+
+            <div class="message-icon loading-icon">
+                <i class="fa-solid fa-spinner fa-spin"></i>
+            </div>
+
+            <h3>Loading events</h3>
+
+            <p>
+                Please wait while we get the latest church events.
+            </p>
+
         </div>
 
-        <div id="error" class="message error hidden"></div>
 
-        <div id="no-events" class="message hidden">
-            There are no upcoming events at the moment.
+        <!-- =========================
+             Error Message
+             ========================= -->
+
+        <div id="error" class="message error hidden">
+
+            <div class="message-icon error-icon">
+                <i class="fa-solid fa-circle-exclamation"></i>
+            </div>
+
+            <h3>Unable to load events</h3>
+
+            <p id="error-text"></p>
+
         </div>
+
+
+        <!-- =========================
+             No Events
+             ========================= -->
+
+        <div id="no-events" class="message empty-message hidden">
+
+            <div class="message-icon empty-icon">
+                <i class="fa-regular fa-calendar-xmark"></i>
+            </div>
+
+            <h3>No upcoming events</h3>
+
+            <p>
+                There are no upcoming church events at the moment.
+                Please check again later.
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             Events Grid
+             ========================= -->
 
         <div id="events-list" class="events-grid"></div>
 
+
+        <!-- =========================
+             Bottom Note
+             ========================= -->
+
+        <section class="events-note">
+
+            <div class="note-icon">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+
+            <div>
+
+                <h3>Stay connected</h3>
+
+                <p>
+                    Check this page regularly for new church events,
+                    meetings and activities.
+                </p>
+
+            </div>
+
+        </section>
+
     </main>
+
+
+    <!-- =========================
+         Footer
+         ========================= -->
+
+    <footer class="page-footer">
+
+        <div class="footer-icon">
+            <i class="fa-solid fa-church"></i>
+        </div>
+
+        <div>
+            <strong>Church Management System</strong>
+
+            <p>
+                Connecting people. Serving the church.
+            </p>
+        </div>
+
+    </footer>
+
 
     <script src="/js/member-events.js"></script>
 
 </body>
+
 </html>

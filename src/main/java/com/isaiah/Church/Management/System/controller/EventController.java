@@ -29,6 +29,11 @@ public class EventController {
         return service.getAllEvents();
     }
 
+    @GetMapping("/attendance-eligible")
+public List<Event> getAttendanceEligibleEvents() {
+    return service.getAttendanceEligibleEvents();
+}
+
     @GetMapping("/{id}")
     public Event getEvent(@PathVariable Integer id) {
         return service.getEventById(id);
@@ -46,4 +51,6 @@ public class EventController {
     public void deleteEvent(@PathVariable Integer id) {
         service.deleteEvent(id);
     }
+
+    
 }

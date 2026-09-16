@@ -11,4 +11,7 @@ public interface EventRepository
 
     List<Event> findByEventDateGreaterThanEqualOrderByEventDateAsc(
             LocalDate date);
+
+    List<Event> findByEventDateLessThanEqualOrderByEventDateDesc(
+        LocalDate eventDate);      
 }

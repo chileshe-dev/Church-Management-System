@@ -95,7 +95,7 @@ function initAttendance() {
 
 function loadEventsDropdown() {
 
-    fetch("/events")
+    fetch("/events/attendance-eligible")
         .then(response => response.json())
         .then(data => {
 
@@ -190,21 +190,27 @@ function saveAttendance() {
     const attendance = {
 
         member: {
-
             memberId:
-                parseInt(document.getElementById("attendanceMember").value)
-
+                parseInt(
+                    document.getElementById(
+                        "attendanceMember"
+                    ).value
+                )
         },
 
         event: {
-
             eventId:
-                parseInt(document.getElementById("attendanceEvent").value)
-
+                parseInt(
+                    document.getElementById(
+                        "attendanceEvent"
+                    ).value
+                )
         },
 
         status:
-            document.getElementById("attendanceStatus").value
+            document.getElementById(
+                "attendanceStatus"
+            ).value
 
     };
 
@@ -214,9 +220,7 @@ function saveAttendance() {
     if (editingAttendanceId != null) {
 
         url = `/attendance/${editingAttendanceId}`;
-
         method = "PUT";
-
     }
 
     fetch(url, {
@@ -224,22 +228,49 @@ function saveAttendance() {
         method: method,
 
         headers: {
-
             "Content-Type": "application/json"
-
         },
 
         body: JSON.stringify(attendance)
 
     })
+    .then(async response => {
+
+        if (!response.ok) {
+
+            const message = await response.text();
+
+            throw new Error(
+                message ||
+                "Unable to save attendance."
+            );
+        }
+
+        return response.json();
+
+    })
     .then(() => {
 
-        document.getElementById("attendanceModal").style.display = "none";
+        document.getElementById(
+            "attendanceModal"
+        ).style.display = "none";
 
         loadAttendance();
 
-    });
+    })
+    .catch(error => {
 
+        console.error(
+            "Error saving attendance:",
+            error
+        );
+
+        alert(
+            error.message ||
+            "Unable to save attendance."
+        );
+
+    });
 }
 
 

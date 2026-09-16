@@ -1,89 +1,211 @@
-<h1>Events</h1>
+<div class="events-page">
 
-<div class="toolbar">
+    <div class="page-header">
+        <div>
+            <span class="page-label">EVENTS</span>
+            <h2>Event Management</h2>
+            <p>Plan and manage church events, activities and gatherings.</p>
+        </div>
 
-    <input
-        type="text"
-        id="searchEvent"
-        placeholder="Search events...">
-
-    <button id="addEventBtn">
-        + Add Event
-    </button>
-
-</div>
-
-<table>
-
-    <thead>
-
-        <tr>
-
-            <th>ID</th>
-            <th>Event Name</th>
-            <th>Date</th>
-            <th>Location</th>
-            <th>Description</th>
-            <th>Actions</th>
-
-        </tr>
-
-    </thead>
-
-    <tbody id="eventsBody">
-
-    </tbody>
-
-</table>
-
-
-<!-- Event Modal -->
-
-<div id="eventModal" class="modal">
-
-    <div class="modal-content">
-
-        <h2 id="eventModalTitle">
+        <button id="addEventBtn" class="primary-btn">
+            <i class="fa-solid fa-calendar-plus"></i>
             Add Event
-        </h2>
+        </button>
+    </div>
 
-        <label>Event Name</label>
+    <div class="content-card">
 
-        <input
-            type="text"
-            id="eventName">
+        <div class="card-toolbar">
+            <div>
+                <h3>Church Events</h3>
+                <p>View and manage upcoming and scheduled church events.</p>
+            </div>
 
-        <label>Date</label>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
 
-        <input
-            type="date"
-            id="eventDate">
+                <input
+                    type="text"
+                    id="searchEvent"
+                    placeholder="Search events...">
+            </div>
+        </div>
 
-        <label>Location</label>
+        <div class="table-container">
 
-        <input
-            type="text"
-            id="location">
+            <table class="data-table">
 
-        <label>Description</label>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Event Name</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
 
-        <textarea
-            id="description"
-            rows="4"></textarea>
+                <tbody id="eventsBody"></tbody>
 
-        <div class="modal-buttons">
+            </table>
 
-            <button id="saveEventBtn">
+        </div>
 
-                Save
+    </div>
 
-            </button>
 
-            <button id="cancelEventBtn">
+    <!-- Event Modal -->
 
-                Cancel
+    <div id="eventModal" class="modal">
 
-            </button>
+        <div class="modal-content event-modal">
+
+            <div class="modal-header">
+
+                <div class="modal-title-area">
+
+                    <div class="modal-icon event-modal-icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+
+                    <div>
+                        <h3 id="eventModalTitle">Add Event</h3>
+                        <p>Enter the details for the church event.</p>
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    onclick="document.getElementById('eventModal').style.display='none'">
+
+                    &times;
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="form-grid">
+
+                    <!-- Event Name -->
+
+                    <div class="input-group full-width">
+
+                        <label for="eventName">
+                            Event Name
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-calendar-check"></i>
+
+                            <input
+                                type="text"
+                                id="eventName"
+                                placeholder="Enter event name">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Date -->
+
+                    <div class="input-group">
+
+                        <label for="eventDate">
+                            Date
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-calendar-days"></i>
+
+                            <input
+                                type="date"
+                                id="eventDate">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Location -->
+
+                    <div class="input-group">
+
+                        <label for="location">
+                            Location
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <input
+                                type="text"
+                                id="location"
+                                placeholder="Enter event location">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Description -->
+
+                    <div class="input-group full-width">
+
+                        <label for="description">
+                            Description
+                        </label>
+
+                        <div class="input-wrapper textarea-wrapper">
+
+                            <i class="fa-solid fa-align-left"></i>
+
+                            <textarea
+                                id="description"
+                                rows="4"
+                                placeholder="Enter event description"></textarea>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-buttons">
+
+                <button
+                    type="button"
+                    id="cancelEventBtn"
+                    class="secondary-btn">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="button"
+                    id="saveEventBtn"
+                    class="primary-btn">
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save Event
+
+                </button>
+
+            </div>
 
         </div>
 

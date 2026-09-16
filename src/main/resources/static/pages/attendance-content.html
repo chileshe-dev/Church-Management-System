@@ -1,77 +1,197 @@
-<h1>Attendance</h1>
+<div class="attendance-page">
 
-<div class="toolbar">
+    <div class="page-header">
+        <div>
+            <span class="page-label">ATTENDANCE</span>
+            <h2>Attendance Management</h2>
+            <p>Track member attendance at church events and activities.</p>
+        </div>
 
-    <input
-        type="text"
-        id="searchAttendance"
-        placeholder="Search attendance...">
-
-    <button id="addAttendanceBtn">
-        + Mark Attendance
-    </button>
-
-</div>
-
-<table>
-
-    <thead>
-
-        <tr>
-
-            <th>ID</th>
-            <th>Member</th>
-            <th>Event</th>
-            <th>Status</th>
-            <th>Actions</th>
-
-        </tr>
-
-    </thead>
-
-    <tbody id="attendanceBody">
-
-    </tbody>
-
-</table>
-
-
-<!-- Attendance Modal -->
-
-<div id="attendanceModal" class="modal">
-
-    <div class="modal-content">
-
-        <h2 id="attendanceModalTitle">
+        <button id="addAttendanceBtn" class="primary-btn">
+            <i class="fa-solid fa-user-check"></i>
             Mark Attendance
-        </h2>
+        </button>
+    </div>
 
-        <label>Member</label>
 
-        <select id="attendanceMember"></select>
+    <div class="content-card">
 
-        <label>Event</label>
+        <div class="card-toolbar">
+            <div>
+                <h3>Attendance Records</h3>
+                <p>View and manage member attendance records.</p>
+            </div>
 
-        <select id="attendanceEvent"></select>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
 
-        <label>Status</label>
+                <input
+                    type="text"
+                    id="searchAttendance"
+                    placeholder="Search attendance...">
+            </div>
+        </div>
 
-        <select id="attendanceStatus">
 
-            <option value="Present">Present</option>
-            <option value="Absent">Absent</option>
+        <div class="table-container">
 
-        </select>
+            <table class="data-table">
 
-        <div class="modal-buttons">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Member</th>
+                        <th>Event</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
 
-            <button id="saveAttendanceBtn">
-                Save
-            </button>
+                <tbody id="attendanceBody"></tbody>
 
-            <button id="cancelAttendanceBtn">
-                Cancel
-            </button>
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- Attendance Modal -->
+
+    <div id="attendanceModal" class="modal">
+
+        <div class="modal-content attendance-modal">
+
+            <div class="modal-header">
+
+                <div class="modal-title-area">
+
+                    <div class="modal-icon attendance-modal-icon">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+
+                    <div>
+                        <h3 id="attendanceModalTitle">
+                            Mark Attendance
+                        </h3>
+
+                        <p>
+                            Record a member's attendance for an event.
+                        </p>
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    onclick="document.getElementById('attendanceModal').style.display='none'">
+
+                    &times;
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="form-grid">
+
+                    <!-- Member -->
+
+                    <div class="input-group full-width">
+
+                        <label for="attendanceMember">
+                            Member
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <select id="attendanceMember"></select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Event -->
+
+                    <div class="input-group full-width">
+
+                        <label for="attendanceEvent">
+                            Event
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-calendar-days"></i>
+
+                            <select id="attendanceEvent"></select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Status -->
+
+                    <div class="input-group full-width">
+
+                        <label for="attendanceStatus">
+                            Attendance Status
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            <select id="attendanceStatus">
+
+                                <option value="Present">
+                                    Present
+                                </option>
+
+                                <option value="Absent">
+                                    Absent
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-buttons">
+
+                <button
+                    type="button"
+                    id="cancelAttendanceBtn"
+                    class="secondary-btn">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="button"
+                    id="saveAttendanceBtn"
+                    class="primary-btn">
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save Attendance
+
+                </button>
+
+            </div>
 
         </div>
 

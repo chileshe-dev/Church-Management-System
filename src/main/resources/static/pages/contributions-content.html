@@ -1,88 +1,255 @@
-<h1>Contributions</h1>
+<div class="contributions-page">
 
-<div class="toolbar">
+    <div class="page-header">
 
-    <input
-        type="text"
-        id="searchContribution"
-        placeholder="Search contributions...">
+        <div>
+            <span class="page-label">CONTRIBUTIONS</span>
 
-    <button id="addContributionBtn">
-        + Add Contribution
-    </button>
+            <h2>Contribution Management</h2>
 
-</div>
+            <p>
+                Record and manage church member contributions.
+            </p>
+        </div>
 
-<table>
-
-    <thead>
-
-        <tr>
-
-            <th>ID</th>
-            <th>Member</th>
-            <th>Type</th>
-            <th>Amount</th>
-            <th>Date</th>
-            <th>Actions</th>
-
-        </tr>
-
-    </thead>
-
-    <tbody id="contributionsBody">
-
-    </tbody>
-
-</table>
-
-
-<!-- Contribution Modal -->
-
-<div id="contributionModal" class="modal">
-
-    <div class="modal-content">
-
-        <h2 id="contributionModalTitle">
+        <button id="addContributionBtn" class="primary-btn">
+            <i class="fa-solid fa-circle-plus"></i>
             Add Contribution
-        </h2>
+        </button>
 
-        <label>Member</label>
+    </div>
 
-        <select id="memberSelect"></select>
 
-        <label>Contribution Type</label>
+    <!-- Contributions Card -->
 
-        <select id="contributionType">
+    <div class="content-card">
 
-            <option value="Tithe">Tithe</option>
-            <option value="Offering">Offering</option>
-            <option value="Donation">Donation</option>
+        <div class="card-toolbar">
 
-        </select>
+            <div>
+                <h3>Contribution Records</h3>
 
-        <label>Amount</label>
+                <p>
+                    View and manage tithes, offerings and donations.
+                </p>
+            </div>
 
-        <input
-            type="number"
-            id="amount"
-            step="0.01">
+            <div class="search-box">
 
-        <label>Date</label>
+                <i class="fa-solid fa-magnifying-glass"></i>
 
-        <input
-            type="date"
-            id="contributionDate">
+                <input
+                    type="text"
+                    id="searchContribution"
+                    placeholder="Search contributions..."
+                >
 
-        <div class="modal-buttons">
+            </div>
 
-            <button id="saveContributionBtn">
-                Save
-            </button>
+        </div>
 
-            <button id="cancelContributionBtn">
-                Cancel
-            </button>
+
+        <div class="table-container">
+
+            <table class="data-table">
+
+                <thead>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Member</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="contributionsBody">
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- Add / Edit Contribution Modal -->
+
+    <div id="contributionModal" class="modal">
+
+        <div class="modal-content contribution-modal">
+
+            <div class="modal-header">
+
+                <div class="modal-title-area">
+
+                    <div class="modal-icon contribution-modal-icon">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+
+                    <div>
+
+                        <h3 id="contributionModalTitle">
+                            Add Contribution
+                        </h3>
+
+                        <p>
+                            Enter the contribution details below.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    onclick="document.getElementById('contributionModal').style.display='none'">
+
+                    &times;
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="form-grid">
+
+
+                    <!-- Member -->
+
+                    <div class="input-group full-width">
+
+                        <label for="memberSelect">
+                            Member
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <select id="memberSelect">
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Contribution Type -->
+
+                    <div class="input-group">
+
+                        <label for="contributionType">
+                            Contribution Type
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-list"></i>
+
+                            <select id="contributionType">
+
+                                <option value="Tithe">
+                                    Tithe
+                                </option>
+
+                                <option value="Offering">
+                                    Offering
+                                </option>
+
+                                <option value="Donation">
+                                    Donation
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Amount -->
+
+                    <div class="input-group">
+
+                        <label for="amount">
+                            Amount
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="currency-symbol">
+                                K
+                            </span>
+
+                            <input
+                                type="number"
+                                id="amount"
+                                step="0.01"
+                                min="0"
+                                placeholder="0.00"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Date -->
+
+                    <div class="input-group">
+
+                        <label for="contributionDate">
+                            Contribution Date
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-calendar-days"></i>
+
+                            <input
+                                type="date"
+                                id="contributionDate"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-buttons">
+
+                <button
+                    type="button"
+                    id="cancelContributionBtn"
+                    class="secondary-btn">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="button"
+                    id="saveContributionBtn"
+                    class="primary-btn">
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save Contribution
+
+                </button>
+
+            </div>
 
         </div>
 

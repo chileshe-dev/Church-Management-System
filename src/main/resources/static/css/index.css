@@ -1,0 +1,342 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            rgba(8, 25, 55, 0.65),
+            rgba(8, 25, 55, 0.65)
+        ),
+        url("/images/dashboard-bg.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    color: white;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.landing-page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px 20px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.welcome-card {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    padding: 45px;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.95);
+
+    color: #193452;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.35);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #e4efff;
+
+    font-size: 32px;
+}
+
+
+h1 {
+
+    margin: 0;
+
+    font-size: 32px;
+
+    color: #173b70;
+}
+
+
+.subtitle {
+
+    margin-top: 10px;
+
+    color: #718096;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+
+    width: 60px;
+
+    height: 3px;
+
+    background: #1f5fae;
+
+    margin: 28px auto;
+}
+
+
+h2 {
+
+    margin-bottom: 20px;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   LOGIN OPTIONS
+========================= */
+
+.login-options {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+.login-option {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 20px;
+
+    text-align: left;
+
+    text-decoration: none;
+
+    color: #193452;
+
+    border: 1px solid #dce5ef;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.login-option:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        #9ebce0;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.option-icon {
+
+    flex-shrink: 0;
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #dceaff;
+
+    font-size: 24px;
+}
+
+
+.member-icon {
+
+    background: #d9f5e8;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.option-content {
+
+    flex: 1;
+}
+
+
+.option-content h3 {
+
+    margin: 0 0 6px;
+
+    font-size: 18px;
+}
+
+
+.option-content p {
+
+    margin: 0;
+
+    color: #718096;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   ARROW
+========================= */
+
+.arrow {
+
+    font-size: 25px;
+
+    color: #1f5fae;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer-text {
+
+    margin-top: 30px;
+
+    margin-bottom: 0;
+
+    color: #718096;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .welcome-card {
+
+        padding: 30px 20px;
+
+    }
+
+    h1 {
+
+        font-size: 25px;
+
+    }
+
+    h2 {
+
+        font-size: 18px;
+
+    }
+
+    .login-option {
+
+        padding: 16px;
+
+    }
+
+    .option-icon {
+
+        width: 48px;
+
+        height: 48px;
+
+        font-size: 20px;
+
+    }
+
+    .option-content h3 {
+
+        font-size: 16px;
+
+    }
+
+}

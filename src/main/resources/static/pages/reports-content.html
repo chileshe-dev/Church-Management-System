@@ -1,14 +1,16 @@
 <div class="reports-page">
 
-    <!-- Header -->
+    <!-- Page Header -->
 
-    <div class="reports-header">
+    <div class="page-header reports-page-header">
 
         <div>
-            <h1>Reports</h1>
+            <span class="page-label">REPORTS</span>
+
+            <h2>Church Reports</h2>
 
             <p>
-                Overview of church contributions and attendance
+                Overview of church contributions and attendance.
             </p>
         </div>
 
@@ -24,11 +26,11 @@
 
         <div class="report-summary-card">
 
-            <div class="report-card-icon">
+            <div class="report-card-icon contributions-icon">
                 <i class="fa-solid fa-hand-holding-dollar"></i>
             </div>
 
-            <div>
+            <div class="report-summary-info">
 
                 <span>Total Contributions</span>
 
@@ -45,11 +47,11 @@
 
         <div class="report-summary-card">
 
-            <div class="report-card-icon">
+            <div class="report-card-icon records-icon">
                 <i class="fa-solid fa-receipt"></i>
             </div>
 
-            <div>
+            <div class="report-summary-info">
 
                 <span>Contribution Records</span>
 
@@ -66,21 +68,19 @@
 
         <div class="report-summary-card">
 
-            <div class="report-card-icon">
+            <div class="report-card-icon attendance-icon">
                 <i class="fa-solid fa-user-check"></i>
             </div>
 
-            <div>
+            <div class="report-summary-info">
 
-                <span>Attendance</span>
+                <span>Attendance Rate</span>
 
                 <h2 id="reportAttendancePercentage">
                     0%
                 </h2>
 
-                <small>
-                    Present
-                </small>
+                <small>Members present</small>
 
             </div>
 
@@ -95,15 +95,19 @@
 
         <div class="report-panel-header">
 
-            <div>
+            <div class="report-heading">
 
-                <h2>
-                    Monthly Contributions
-                </h2>
+                <div class="report-panel-icon">
+                    <i class="fa-solid fa-chart-column"></i>
+                </div>
 
-                <p>
-                    Total contributions received each month
-                </p>
+                <div>
+                    <h2>Monthly Contributions</h2>
+
+                    <p>
+                        Total contributions received each month.
+                    </p>
+                </div>
 
             </div>
 
@@ -129,15 +133,19 @@
 
             <div class="report-panel-header">
 
-                <div>
+                <div class="report-heading">
 
-                    <h2>
-                        Contribution Types
-                    </h2>
+                    <div class="report-panel-icon">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
 
-                    <p>
-                        Distribution of contribution records
-                    </p>
+                    <div>
+                        <h2>Contribution Types</h2>
+
+                        <p>
+                            Distribution of contribution records.
+                        </p>
+                    </div>
 
                 </div>
 
@@ -160,15 +168,20 @@
 
             <div class="report-panel-header">
 
-                <div>
+                <div class="report-heading">
 
-                    <h2>
-                        Attendance Summary
-                    </h2>
+                    <div class="report-panel-icon">
+                        <i class="fa-solid fa-chart-doughnut"></i>
+                    </div>
 
-                    <p>
-                        Present vs absent attendance
-                    </p>
+                    <div>
+                        <h2>Attendance Summary</h2>
+
+                        <p>
+                            Present versus absent attendance.
+                        </p>
+
+                    </div>
 
                 </div>
 
@@ -187,21 +200,49 @@
     </div>
 
 
-    <!-- Report Actions -->
+    <!-- Export Actions -->
 
-    <div class="report-actions">
+    <div class="report-export-card">
 
-       <div class="report-actions">
+        <div class="export-info">
 
-    <button onclick="exportPDF()">
-        Export PDF
-    </button>
+            <div class="export-icon">
+                <i class="fa-solid fa-file-export"></i>
+            </div>
 
-    <button onclick="exportExcel()">
-        Export Excel
-    </button>
+            <div>
+                <h3>Export Reports</h3>
 
-</div>
+                <p>
+                    Download church report data for record keeping.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="report-actions">
+
+            <button
+                type="button"
+                class="export-btn pdf-btn"
+                onclick="exportPDF()">
+
+                <i class="fa-solid fa-file-pdf"></i>
+                Export PDF
+
+            </button>
+
+            <button
+                type="button"
+                class="export-btn excel-btn"
+                onclick="exportExcel()">
+
+                <i class="fa-solid fa-file-excel"></i>
+                Export Excel
+
+            </button>
+
+        </div>
 
     </div>
 

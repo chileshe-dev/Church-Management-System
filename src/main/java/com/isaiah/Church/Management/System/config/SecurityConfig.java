@@ -32,6 +32,7 @@ public class SecurityConfig {
 
                 .requestMatchers(
     "/",
+    "/index.html",
     "/login.html",
     "/register.html",
 
@@ -40,6 +41,8 @@ public class SecurityConfig {
     "/member-contributions.html",
     "/member-attendance.html",
      "/member-events.html",
+     "/member-make-contribution.html",
+     "/member-ministries.html",
 
     "/member-registration",
     "/member-login",
@@ -49,10 +52,13 @@ public class SecurityConfig {
     "/member-payments",
     "/member-events",
     "/member-attendance",
+    "/member-ministries",
 
 
     "/css/**",
     "/js/**",
+    "/images/**",
+    "/member-ministries/**",
     "/favicon.ico"
 )
 .permitAll()

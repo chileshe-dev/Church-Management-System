@@ -1,95 +1,266 @@
-<h1>Members</h1>
+<div class="members-page">
 
-<div class="page-header">
+    <div class="page-header">
 
-    <input
-        type="text"
-        id="searchMember"
-        placeholder="Search members...">
+        <div>
+            <span class="page-label">MEMBERS</span>
 
-    <button id="addMemberBtn">
-        + Add Member
-    </button>
+            <h2>Member Management</h2>
 
-</div>
+            <p>
+                Manage church members and their contact information.
+            </p>
+        </div>
 
-<table id="membersTable">
-
-    <thead>
-
-        <tr>
-
-            <th>ID</th>
-
-            <th>First Name</th>
-
-            <th>Last Name</th>
-
-            <th>Email</th>
-
-            <th>Phone</th>
-
-            <th>Address</th>
-
-            <th>Actions</th>
-
-        </tr>
-
-    </thead>
-
-    <tbody id="membersBody">
-
-    </tbody>
-
-</table>
-
-
-<!-- Add/Edit Member Modal -->
-
-<div id="memberModal" class="modal">
-
-    <div class="modal-content">
-
-        <h2 id="modalTitle">
+        <button id="addMemberBtn" class="primary-btn">
+            <i class="fa-solid fa-user-plus"></i>
             Add Member
-        </h2>
+        </button>
 
-        <input type="hidden" id="memberId">
+    </div>
 
-        <input
-                type="text"
-                id="firstName"
-                placeholder="First Name">
 
-        <input
-                type="text"
-                id="lastName"
-                placeholder="Last Name">
+    <!-- Members Card -->
 
-        <input
-                type="email"
-                id="email"
-                placeholder="Email">
+    <div class="content-card">
 
-        <input
-                type="text"
-                id="phone"
-                placeholder="Phone">
+        <div class="card-toolbar">
 
-        <input
-                type="text"
-                id="address"
-                placeholder="Address">
+            <div>
+                <h3>Church Members</h3>
 
-        <div class="modal-buttons">
+                <p>
+                    View and manage registered members.
+                </p>
+            </div>
 
-            <button id="saveMemberBtn">
-                Save
-            </button>
+            <div class="search-box">
 
-            <button id="cancelMemberBtn">
-                Cancel
-            </button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="searchMember"
+                    placeholder="Search members..."
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table class="data-table">
+
+                <thead>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Actions</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="membersBody">
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- Add / Edit Member Modal -->
+
+    <div id="memberModal" class="modal">
+
+        <div class="modal-content member-modal">
+
+            <div class="modal-header">
+
+                <div class="modal-title-area">
+
+                    <div class="modal-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div>
+
+                        <h3 id="modalTitle">
+                            Add Member
+                        </h3>
+
+                        <p>
+                            Enter the member's information below.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    onclick="document.getElementById('memberModal').style.display='none'">
+
+                    &times;
+
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <input
+                    type="hidden"
+                    id="memberId"
+                >
+
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+
+                        <label for="firstName">
+                            First Name
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="firstName"
+                                placeholder="Enter first name"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="lastName">
+                            Last Name
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="lastName"
+                                placeholder="Enter last name"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter email address"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            <input
+                                type="text"
+                                id="phone"
+                                placeholder="Enter phone number"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-group full-width">
+
+                        <label for="address">
+                            Address
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            <input
+                                type="text"
+                                id="address"
+                                placeholder="Enter address"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-buttons">
+
+                <button
+                    type="button"
+                    id="cancelMemberBtn"
+                    class="secondary-btn">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="button"
+                    id="saveMemberBtn"
+                    class="primary-btn">
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save Member
+
+                </button>
+
+            </div>
 
         </div>
 

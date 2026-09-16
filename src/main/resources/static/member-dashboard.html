@@ -2,74 +2,109 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Member Dashboard | Church Management System</title>
 
-    <link rel="stylesheet"
-          href="/css/member-dashboard.css">
+    <link rel="stylesheet" href="/css/member-dashboard.css">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
-<body >
+<body>
 
-    <!-- Navigation -->
-    <header class="topbar">
+<!-- =========================
+     HEADER
+========================= -->
 
-        <div class="brand">
-            <div class="brand-icon">✝</div>
+<header class="dashboard-header">
 
-            <div>
-                <h1>Church Management System</h1>
-                <span>Member Portal</span>
-            </div>
+    <div class="brand">
+
+        <div class="brand-icon">
+            <i class="fa-solid fa-church"></i>
+        </div>
+
+        <div class="brand-text">
+            <h1>Church Management System</h1>
+            <span>Member Portal</span>
+        </div>
+
+    </div>
+
+
+    <div class="header-right">
+
+        <div class="portal-label">
+            <i class="fa-solid fa-user"></i>
+            <span>Member</span>
         </div>
 
         <button id="logoutBtn" class="logout-btn">
-            Logout
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
         </button>
 
-    </header>
+    </div>
+
+</header>
 
 
-    <main class="dashboard-container">
+<!-- =========================
+     MAIN
+========================= -->
 
-        <!-- Welcome Section -->
-        <section class="welcome-section">
-
-            <div>
-
-                <p class="welcome-label">
-                    MEMBER DASHBOARD
-                </p>
-
-                <h2>
-                    Welcome,
-                    <span id="memberName"></span> 👋
-                </h2>
-
-                <p class="welcome-text">
-                    Welcome to your church member portal.
-                    Manage your contributions, attendance and
-                    upcoming church events from one place.
-                </p>
-
-            </div>
-
-        </section>
+<main class="dashboard-container">
 
 
-        <!-- Account Information -->
-        <section class="account-card">
+    <!-- =========================
+         WELCOME
+    ========================= -->
 
-            <div class="section-heading">
+    <section class="welcome-section">
 
-                <div class="section-icon">
-                    👤
+        <div class="welcome-content">
+
+            <span class="welcome-label">
+                <i class="fa-solid fa-house"></i>
+                Member Dashboard
+            </span>
+
+            <h2>
+                Welcome,
+                <span id="memberName"></span>
+            </h2>
+
+            <p>
+                Stay connected with your church community.
+                Manage your contributions, attendance and
+                upcoming events from one place.
+            </p>
+
+        </div>
+
+        <div class="welcome-decoration">
+            <i class="fa-solid fa-church"></i>
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ACCOUNT
+    ========================= -->
+
+    <section class="account-card">
+
+        <div class="account-header">
+
+            <div class="account-title">
+
+                <div class="account-icon">
+                    <i class="fa-solid fa-user"></i>
                 </div>
 
                 <div>
@@ -82,193 +117,324 @@
 
             </div>
 
+            <div class="account-badge">
+                <i class="fa-solid fa-shield-halved"></i>
+                Member Account
+            </div>
 
-            <div class="account-details">
+        </div>
 
-                <div class="account-item">
 
-                    <span class="detail-label">
+        <div class="account-details">
+
+            <div class="account-detail">
+
+                <div class="detail-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div>
+                    <span class="account-detail-label">
                         Username
                     </span>
 
-                    <strong id="memberUsername">
-                        —
-                    </strong>
-
+                    <span id="memberUsername"
+                          class="account-detail-value">
+                    </span>
                 </div>
 
+            </div>
 
-                <div class="account-item">
 
-                    <span class="detail-label">
+            <div class="account-detail">
+
+                <div class="detail-icon status-icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div>
+                    <span class="account-detail-label">
                         Account Status
                     </span>
 
-                    <strong
-                        id="memberStatus"
-                        class="status-badge">
-                        —
-                    </strong>
-
+                    <span id="memberStatus"
+                          class="status">
+                    </span>
                 </div>
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- Quick Actions -->
-        <section class="actions-section">
+    <!-- =========================
+         QUICK ACTIONS
+    ========================= -->
 
-            <div class="section-title">
+    <section class="quick-actions-section">
 
-                <h3>Quick Actions</h3>
+        <div class="quick-actions-heading">
+
+            <div>
+                <span class="section-label">
+                    MEMBER SERVICES
+                </span>
+
+                <h2>
+                    What would you like to do?
+                </h2>
 
                 <p>
-                    Access your member services
+                    Quickly access your church member services.
                 </p>
-
             </div>
 
+        </div>
 
-            <div class="action-grid">
+
+        <div class="action-grid">
 
 
-                <!-- Make Contribution -->
-                <a
-                    href="/member-contributions.html"
-                    class="action-card contribution">
+            <!-- MAKE CONTRIBUTION -->
 
-                    <div class="action-icon">
-                        💰
+            <a href="/member-make-contribution.html"
+               class="action-card contribution-card">
+
+                <div class="action-top">
+
+                    <div class="action-icon contribution-icon">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
                     </div>
 
-                    <div class="action-content">
-
-                        <h4>Make a Contribution</h4>
-
-                        <p>
-                            Give your tithe, offering or other
-                            church contribution.
-                        </p>
-
-                    </div>
-
-                    <span class="arrow">
-                        →
+                    <span class="action-number">
+                        01
                     </span>
 
-                </a>
+                </div>
 
+                <div class="action-content">
 
-                <!-- Contributions -->
-                <a
-                    href="/member-contributions.html"
-                    class="action-card">
+                    <h3>
+                        Make a Contribution
+                    </h3>
 
-                    <div class="action-icon">
-                        📊
-                    </div>
+                    <p>
+                        Give your tithe, offering or other
+                        contribution to the church.
+                    </p>
 
-                    <div class="action-content">
+                </div>
 
-                        <h4>My Contributions</h4>
+                <div class="action-footer">
 
-                        <p>
-                            View your contribution history
-                            and records.
-                        </p>
-
-                    </div>
-
-                    <span class="arrow">
-                        →
+                    <span>
+                        Make contribution
                     </span>
 
-                </a>
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </div>
+
+            </a>
 
 
-                <!-- Events -->
-                <a
-                    href="/member-events.html"
-                    class="action-card">
+            <!-- MY CONTRIBUTIONS -->
 
-                    <div class="action-icon">
-                        📅
+            <a href="/member-contributions.html"
+               class="action-card history-card">
+
+                <div class="action-top">
+
+                    <div class="action-icon history-icon">
+                        <i class="fa-solid fa-chart-column"></i>
                     </div>
 
-                    <div class="action-content">
-
-                        <h4>Upcoming Events</h4>
-
-                        <p>
-                            See upcoming church events,
-                            dates and locations.
-                        </p>
-
-                    </div>
-
-                    <span class="arrow">
-                        →
+                    <span class="action-number">
+                        02
                     </span>
 
-                </a>
+                </div>
 
+                <div class="action-content">
 
-                <!-- Attendance -->
-                <a
-                    href="/member-attendance.html"
-                    class="action-card">
+                    <h3>
+                        My Contributions
+                    </h3>
 
-                    <div class="action-icon">
-                        ✓
-                    </div>
+                    <p>
+                        View your contribution history and
+                        previous giving records.
+                    </p>
 
-                    <div class="action-content">
+                </div>
 
-                        <h4>Attendance History</h4>
+                <div class="action-footer">
 
-                        <p>
-                            View your church attendance
-                            records.
-                        </p>
-
-                    </div>
-
-                    <span class="arrow">
-                        →
+                    <span>
+                        View history
                     </span>
 
-                </a>
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </div>
+
+            </a>
 
 
-            </div>
+            <!-- EVENTS -->
 
-        </section>
+            <a href="/member-events.html"
+               class="action-card events-card">
+
+                <div class="action-top">
+
+                    <div class="action-icon events-icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+
+                    <span class="action-number">
+                        03
+                    </span>
+
+                </div>
+
+                <div class="action-content">
+
+                    <h3>
+                        Upcoming Events
+                    </h3>
+
+                    <p>
+                        See upcoming church events, dates
+                        and locations.
+                    </p>
+
+                </div>
+
+                <div class="action-footer">
+
+                    <span>
+                        View events
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </div>
+
+            </a>
 
 
-        <!-- Footer Message -->
-        <section class="dashboard-footer">
+            <!-- ATTENDANCE -->
+
+            <a href="/member-attendance.html"
+               class="action-card attendance-card">
+
+                <div class="action-top">
+
+                    <div class="action-icon attendance-icon">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+
+                    <span class="action-number">
+                        04
+                    </span>
+
+                </div>
+
+                <div class="action-content">
+
+                    <h3>
+                        Attendance History
+                    </h3>
+
+                    <p>
+                        View your church attendance and
+                        participation records.
+                    </p>
+
+                </div>
+
+                <div class="action-footer">
+
+                    <span>
+                        View attendance
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </div>
+
+            </a>
+
+            <div class="action-card">
+    <div class="action-icon">
+        <i class="fa-solid fa-people-group"></i>
+    </div>
+
+    <div class="action-content">
+        <h3>My Ministries</h3>
+        <p>
+            Join a ministry and get involved in serving the church.
+        </p>
+
+        <a href="/member-ministries.html" class="action-btn">
+            View Ministries
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="dashboard-footer">
+
+        <div class="footer-message">
 
             <div class="footer-icon">
-                ✝
+                <i class="fa-solid fa-heart"></i>
             </div>
 
             <div>
-                <strong>Stay connected with your church.</strong>
+                <h3>
+                    Stay connected with your church.
+                </h3>
 
                 <p>
-                    Keep track of your giving, attendance
-                    and church activities.
+                    Together we grow in faith, service and love.
                 </p>
             </div>
 
-        </section>
-
-    </main>
+        </div>
 
 
-    <script src="/js/member-dashboard.js"></script>
+        <div class="footer-verse">
+
+            <i class="fa-solid fa-book-bible"></i>
+
+            <div>
+                <span>Matthew 28:20</span>
+                <small>
+                    "I am with you always."
+                </small>
+            </div>
+
+        </div>
+
+    </footer>
+
+</main>
+
+
+<script src="/js/member-dashboard.js"></script>
 
 </body>
 

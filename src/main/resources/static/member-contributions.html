@@ -2,28 +2,32 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <title>My Contributions</title>
 
-    <title>My Contributions | Church Management System</title>
+    <link rel="stylesheet" href="/css/member-contributions.css">
 
-    <link rel="stylesheet"
-          href="/css/member-contributions.css">
-
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 </head>
 
 <body>
 
-    <!-- Top Navigation -->
+    <!-- =========================
+         Header
+         ========================= -->
+
     <header class="topbar">
 
         <div class="brand">
 
             <div class="brand-icon">
-                ✝
+                <i class="fa-solid fa-church"></i>
             </div>
 
             <div>
@@ -33,239 +37,86 @@
 
         </div>
 
-
-        <a href="/member-dashboard.html"
-           class="back-btn">
-
-            ← Dashboard
-
+        <a href="/member-dashboard.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            Dashboard
         </a>
 
     </header>
 
 
+    <!-- =========================
+         Main Content
+         ========================= -->
+
     <main class="page-container">
 
+        <!-- Page heading -->
 
-        <!-- Page Heading -->
         <section class="page-heading">
 
             <div>
 
-                <p class="page-label">
-                    MY GIVING
-                </p>
+                <div class="page-label">
+                    FINANCIAL RECORDS
+                </div>
 
-                <h2>
-                    My Contributions
-                </h2>
+                <h2>My Contributions</h2>
 
                 <p>
-                    Record your contributions and view your
-                    giving history.
+                    View and keep track of your giving history.
                 </p>
 
             </div>
 
 
-            <!-- Total -->
+            <!-- Total contribution -->
+
             <div class="total-card">
 
-                <span>
-                    Total Contributed
-                </span>
-
-                <strong id="totalContributions">
-                    K 0.00
-                </strong>
-
-            </div>
-
-        </section>
-
-
-        <!-- Make Contribution -->
-        <section class="contribution-card">
-
-            <div class="section-heading">
-
-                <div class="section-icon">
-                    💰
+                <div class="total-icon">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
                 </div>
 
                 <div>
+                    <span>Total Contributed</span>
 
-                    <h3>
-                        Make a Contribution
-                    </h3>
-
-                    <p>
-                        Record a tithe, offering, donation or
-                        other contribution.
-                    </p>
-
+                    <strong id="totalContributions">
+                        K 0.00
+                    </strong>
                 </div>
 
-            </div>
-
-
-            <form id="contributionForm"
-                  class="contribution-form">
-
-
-                <!-- Contribution Type -->
-                <div class="form-group">
-
-                    <label for="contributionType">
-                        Contribution Type
-                    </label>
-
-                    <select id="contributionType"
-                            required>
-
-                        <option value="">
-                            Select Type
-                        </option>
-
-                        <option value="Offering">
-                            Offering
-                        </option>
-
-                        <option value="Tithe">
-                            Tithe
-                        </option>
-
-                        <option value="Donation">
-                            Donation
-                        </option>
-
-                        <option value="Other">
-                            Other
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <!-- Amount -->
-                <div class="form-group">
-
-                    <label for="amount">
-                        Amount (K)
-                    </label>
-
-                    <div class="input-with-symbol">
-
-                        <span>K</span>
-
-                        <input
-                            type="number"
-                            id="amount"
-                            min="1"
-                            step="0.01"
-                            placeholder="0.00"
-                            required
-                        >
-
-                    </div>
-
-                </div>
-
-
-                <!-- Date -->
-                <div class="form-group">
-
-                    <label for="contributionDate">
-                        Date
-                    </label>
-
-                    <input
-                        type="date"
-                        id="contributionDate"
-                        required
-                    >
-
-                </div>
-
-
-                <!-- Payment Method -->
-                <div class="form-group">
-
-                    <label for="paymentMethod">
-                        Payment Method
-                    </label>
-
-                    <select id="paymentMethod"
-                            required>
-
-                        <option value="">
-                            Select Payment Method
-                        </option>
-
-                        <option value="Cash">
-                            Cash
-                        </option>
-
-                        <option value="Mobile Money">
-                            Mobile Money
-                        </option>
-
-                        <option value="Bank Transfer">
-                            Bank Transfer
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <!-- Submit -->
-                <div class="form-submit">
-
-                    <button type="submit"
-                            class="submit-btn">
-
-                        Record Contribution
-
-                    </button>
-
-                </div>
-
-            </form>
-
-
-            <!-- Message -->
-            <div id="contributionMessage"
-                 class="contribution-message">
             </div>
 
         </section>
 
 
-        <!-- Contribution History -->
+        <!-- =========================
+             Contribution History
+             ========================= -->
+
         <section class="history-card">
 
             <div class="section-heading">
 
                 <div class="section-icon">
-                    📊
+                    <i class="fa-solid fa-clock-rotate-left"></i>
                 </div>
 
                 <div>
 
-                    <h3>
-                        Contribution History
-                    </h3>
+                    <h3>Contribution History</h3>
 
                     <p>
-                        Your recorded contributions.
+                        A record of your previous contributions.
                     </p>
 
                 </div>
 
             </div>
 
+
+            <!-- Table wrapper makes table scrollable on small screens -->
 
             <div class="table-wrapper">
 
@@ -294,6 +145,8 @@
 
                     <tbody id="contributionsBody">
 
+                        <!-- Data loaded by JavaScript -->
+
                     </tbody>
 
                 </table>
@@ -303,22 +156,23 @@
         </section>
 
 
-        <!-- Footer -->
-        <section class="page-footer">
+        <!-- =========================
+             Giving Message
+             ========================= -->
 
-            <div class="footer-icon">
-                ✝
+        <section class="giving-card">
+
+            <div class="giving-icon">
+                <i class="fa-solid fa-heart"></i>
             </div>
 
             <div>
 
-                <strong>
-                    Thank you for supporting the church.
-                </strong>
+                <h3>Thank you for giving</h3>
 
                 <p>
-                    Your generosity helps support the work
-                    and activities of the church.
+                    Your contributions help support the work,
+                    ministries and activities of the church.
                 </p>
 
             </div>
@@ -326,7 +180,44 @@
         </section>
 
 
+        <!-- Back to dashboard -->
+
+        <div class="bottom-action">
+
+            <a href="/member-dashboard.html" class="dashboard-btn">
+
+                <i class="fa-solid fa-house"></i>
+
+                Back to Member Dashboard
+
+            </a>
+
+        </div>
+
     </main>
+
+
+    <!-- =========================
+         Footer
+         ========================= -->
+
+    <footer class="page-footer">
+
+        <div class="footer-icon">
+            <i class="fa-solid fa-church"></i>
+        </div>
+
+        <div>
+
+            <strong>Church Management System</strong>
+
+            <p>
+                Connecting people. Serving the church.
+            </p>
+
+        </div>
+
+    </footer>
 
 
     <script src="/js/member-contributions.js"></script>

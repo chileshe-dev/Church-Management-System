@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,44 +8,226 @@
     <title>Attendance History | Church Management System</title>
 
     <link rel="stylesheet" href="/css/member-attendance.css">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 </head>
 
 <body>
 
-    <header class="page-header">
-        <div>
-            <h1>Attendance History</h1>
-            <p>View your church attendance records.</p>
+    <!-- =========================
+         Header
+         ========================= -->
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-church"></i>
+            </div>
+
+            <div>
+                <h1>Church Management System</h1>
+                <span>Member Portal</span>
+            </div>
+
         </div>
 
         <a href="/member-dashboard.html" class="back-btn">
-            ← Dashboard
+            <i class="fa-solid fa-arrow-left"></i>
+            Dashboard
         </a>
+
     </header>
 
 
+    <!-- =========================
+         Main Content
+         ========================= -->
+
     <main class="attendance-container">
 
-        <!-- Loading -->
+        <!-- Page heading -->
+
+        <section class="page-heading">
+
+            <div>
+
+                <div class="page-label">
+                    MY RECORDS
+                </div>
+
+                <h2>Attendance History</h2>
+
+                <p>
+                    Keep track of your participation in church services
+                    and activities.
+                </p>
+
+            </div>
+
+            <div class="attendance-icon">
+                <i class="fa-solid fa-calendar-check"></i>
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             Attendance Summary
+             ========================= -->
+
+        <section class="summary-card">
+
+            <div class="summary-icon">
+                <i class="fa-solid fa-user-check"></i>
+            </div>
+
+            <div>
+                <span>Attendance Records</span>
+
+                <p>
+                    Your recorded church attendance will appear below.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             Loading
+             ========================= -->
+
         <div id="loading" class="message">
-            Loading attendance history...
+
+            <div class="message-icon loading-icon">
+                <i class="fa-solid fa-spinner fa-spin"></i>
+            </div>
+
+            <h3>Loading attendance</h3>
+
+            <p>
+                Please wait while we retrieve your attendance records.
+            </p>
+
         </div>
 
-        <!-- Error -->
-        <div id="error" class="message error hidden"></div>
 
-        <!-- No records -->
-        <div id="no-attendance" class="message hidden">
-            You do not have any attendance records yet.
+        <!-- =========================
+             Error
+             ========================= -->
+
+        <div id="error" class="message error hidden">
+
+            <div class="message-icon error-icon">
+                <i class="fa-solid fa-circle-exclamation"></i>
+            </div>
+
+            <h3>Unable to load attendance</h3>
+
+            <p>
+                Something went wrong while retrieving your records.
+            </p>
+
         </div>
 
-        <!-- Attendance records -->
+
+        <!-- =========================
+             No Attendance
+             ========================= -->
+
+        <div id="no-attendance" class="message empty-message hidden">
+
+            <div class="message-icon empty-icon">
+                <i class="fa-regular fa-calendar-xmark"></i>
+            </div>
+
+            <h3>No attendance records</h3>
+
+            <p>
+                You do not have any attendance records yet.
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             Attendance Records
+             ========================= -->
+
         <div id="attendance-list" class="attendance-list"></div>
 
+
+        <!-- =========================
+             Encouragement
+             ========================= -->
+
+        <section class="attendance-note">
+
+            <div class="note-icon">
+                <i class="fa-solid fa-people-group"></i>
+            </div>
+
+            <div>
+
+                <h3>Stay connected</h3>
+
+                <p>
+                    Your participation helps build a stronger
+                    and more connected church community.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Dashboard -->
+
+        <div class="bottom-action">
+
+            <a href="/member-dashboard.html" class="dashboard-btn">
+
+                <i class="fa-solid fa-house"></i>
+
+                Back to Member Dashboard
+
+            </a>
+
+        </div>
+
     </main>
+
+
+    <!-- =========================
+         Footer
+         ========================= -->
+
+    <footer class="page-footer">
+
+        <div class="footer-icon">
+            <i class="fa-solid fa-church"></i>
+        </div>
+
+        <div>
+
+            <strong>Church Management System</strong>
+
+            <p>
+                Connecting people. Serving the church.
+            </p>
+
+        </div>
+
+    </footer>
 
 
     <script src="/js/member-attendance.js"></script>
 
 </body>
+
 </html>
