@@ -1,117 +1,162 @@
+
 package com.isaiah.Church.Management.System.service;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.*;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.isaiah.Church.Management.System.config.MtnMomoConfig;
+
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Base64;
 import java.util.Map;
+import java.util.UUID;
 
 @Service
 public class MtnMomoService {
 
+    private final MtnMomoConfig config;
     private final RestTemplate restTemplate;
+    private final ObjectMapper objectMapper;
 
-    @Value("${mtn.momo.base-url}")
-    private String baseUrl;
-
-    @Value("${mtn.momo.subscription-key}")
-    private String subscriptionKey;
-
-    @Value("${mtn.momo.api-user}")
-    private String apiUser;
-
-    @Value("${mtn.momo.api-key}")
-    private String apiKey;
-
-    public MtnMomoService(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
+    public MtnMomoService(
+            MtnMomoConfig config,
+            ObjectMapper objectMapper) {
+        this.config = config;
+        this.objectMapper = objectMapper;
+        this.restTemplate = new RestTemplate();
     }
 
-
-
-    /**
-     * Get an OAuth access token from MTN.
-     */
-    public String getAccessToken() {
-
-        String url = baseUrl + "/collection/token/";
-
-       
-        // Create Basic Authentication value
-        String credentials =
-                apiUser + ":" + apiKey;
-
-        String encodedCredentials =
-                Base64.getEncoder()
-                        .encodeToString(
-                                credentials.getBytes()
-                        );
-
-        // Headers
-        HttpHeaders headers =
-                new HttpHeaders();
-
-        headers.set(
-                "Authorization",
-                "Basic " + encodedCredentials
-        );
-
+    public String generateAccessToken() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBasicAuth(
+                config.getApiUser(),
+                config.getApiKey());
         headers.set(
                 "Ocp-Apim-Subscription-Key",
-                subscriptionKey
-        );
+                config.getSubscriptionKey());
 
-        headers.setContentType(
-                MediaType.APPLICATION_FORM_URLENCODED
-        );
+        HttpEntity<Void> request =
+                new HttpEntity<>(headers);
 
-        // Request body
-        MultiValueMap<String, String> body =
-                new LinkedMultiValueMap<>();
-
-        body.add(
-                "grant_type",
-                "client_credentials"
-        );
-
-        HttpEntity<MultiValueMap<String, String>> request =
-                new HttpEntity<>(
-                        body,
-                        headers
-                );
-
-        // Send request
-        ResponseEntity<Map> response =
+        ResponseEntity<JsonNode> response =
                 restTemplate.exchange(
-                        url,
+                        config.getBaseUrl()
+                                + "/collection/token/",
                         HttpMethod.POST,
                         request,
-                        Map.class
-                );
+                        JsonNode.class);
 
-        if (!response.getStatusCode().is2xxSuccessful()) {
-            throw new RuntimeException(
-                    "Failed to obtain MTN access token."
-            );
+        JsonNode body = response.getBody();
+
+        if (body == null ||
+                body.get("access_token") == null) {
+            throw new IllegalStateException(
+                    "MTN did not return an access token.");
         }
 
-        Map<String, Object> responseBody =
-                response.getBody();
+        return body.get("access_token").asText();
+    }
 
-        if (responseBody == null ||
-                responseBody.get("access_token") == null) {
+    public PaymentRequestResult requestPayment(
+            String amount,
+            String phoneNumber,
+            String externalId,
+            String referenceId) {
 
-            throw new RuntimeException(
-                    "MTN did not return an access token."
-            );
+        String token = generateAccessToken();
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(token);
+        headers.set(
+                "Ocp-Apim-Subscription-Key",
+                config.getSubscriptionKey());
+        headers.set(
+                "X-Target-Environment",
+                config.getTargetEnvironment());
+        headers.set("X-Reference-Id", referenceId);
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        Map<String, Object> payer = Map.of(
+                "partyIdType", "MSISDN",
+                "partyId", phoneNumber);
+
+        Map<String, Object> body = Map.of(
+                "amount", amount,
+                "currency", "EUR",
+                "externalId", externalId,
+                "payer", payer,
+                "payerMessage", "Church contribution test",
+                "payeeNote", "Church contribution test");
+
+        HttpEntity<Map<String, Object>> request =
+                new HttpEntity<>(body, headers);
+
+        ResponseEntity<Void> response =
+                restTemplate.exchange(
+                        config.getBaseUrl()
+                                + "/collection/v1_0/requesttopay",
+                        HttpMethod.POST,
+                        request,
+                        Void.class);
+
+        return new PaymentRequestResult(
+                response.getStatusCode().value(),
+                referenceId);
+    }
+
+    public JsonNode getPaymentStatus(String referenceId) {
+        String token = generateAccessToken();
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(token);
+        headers.set(
+                "Ocp-Apim-Subscription-Key",
+                config.getSubscriptionKey());
+        headers.set(
+                "X-Target-Environment",
+                config.getTargetEnvironment());
+
+        HttpEntity<Void> request =
+                new HttpEntity<>(headers);
+
+        ResponseEntity<JsonNode> response =
+                restTemplate.exchange(
+                        config.getBaseUrl()
+                                + "/collection/v1_0/requesttopay/"
+                                + referenceId,
+                        HttpMethod.GET,
+                        request,
+                        JsonNode.class);
+
+        return response.getBody();
+    }
+
+    public String generateReferenceId() {
+        return UUID.randomUUID().toString();
+    }
+
+    public static class PaymentRequestResult {
+        private final int httpStatus;
+        private final String referenceId;
+
+        public PaymentRequestResult(
+                int httpStatus,
+                String referenceId) {
+            this.httpStatus = httpStatus;
+            this.referenceId = referenceId;
         }
 
-        return responseBody
-                .get("access_token")
-                .toString();
+        public int getHttpStatus() {
+            return httpStatus;
+        }
+
+        public String getReferenceId() {
+            return referenceId;
+        }
     }
 }

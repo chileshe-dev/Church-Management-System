@@ -48,9 +48,12 @@ public class SecurityConfig {
     "/member-login",
     "/member-login/logout",
     "/member-account/me",
+   
     "/member-contributions",
     "/member-payments",
+    "/member-payments/**",
     "/member-events",
+
     "/member-attendance",
     "/member-ministries",
 

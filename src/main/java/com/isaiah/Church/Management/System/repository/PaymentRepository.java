@@ -1,3 +1,4 @@
+
 package com.isaiah.Church.Management.System.repository;
 
 import com.isaiah.Church.Management.System.model.Payment;
@@ -10,5 +11,9 @@ public interface PaymentRepository
 
     Optional<Payment> findByContributionContributionId(
             Integer contributionId
+    );
+
+    Optional<Payment> findByProviderReference(
+            String providerReference
     );
 }
